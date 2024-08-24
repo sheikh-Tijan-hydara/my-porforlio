@@ -3,7 +3,7 @@ import ProgressBar from "primevue/progressbar";
 
 const props = defineProps({
   targetValue: {
-    type: Number,
+    type: String,
     required: true,
   },
 });
