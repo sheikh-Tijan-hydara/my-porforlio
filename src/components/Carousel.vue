@@ -4,7 +4,7 @@ import Button from "primevue/button";
 
 <template>
   <div
-    class="relative w-full h-[80vh] flex items-center justify-center text-white bg-cover bg-center bg-no-repeat"
+    class="relative w-full h-[80vh]  flex items-center justify-center text-white bg-cover bg-center bg-no-repeat"
     :style="{ backgroundImage: 'url(/me.png)', backgroundSize: 'cover' }"
   >
     <!-- Dark Overlay -->
@@ -15,28 +15,28 @@ import Button from "primevue/button";
       <a
         href="https://www.linkedin.com/in/your-linkedin"
         target="_blank"
-        class="text-white hover:text-green-500 transition-colors duration-300 text-xl md:text-3xl"
+        class="text-white hover:text-green-500 transition-colors duration-300 text-xl md:text-3xl animate-bounce"
       >
         <i class="pi pi-linkedin"></i>
       </a>
       <a
         href="https://github.com/your-github"
         target="_blank"
-        class="text-white hover:text-green-500 transition-colors duration-300 text-xl md:text-3xl"
+        class="text-white hover:text-green-500 transition-colors duration-300 text-xl md:text-3xl animate-bounce"
       >
         <i class="pi pi-github"></i>
       </a>
       <a
         href="https://twitter.com/your-twitter"
         target="_blank"
-        class="text-white hover:text-green-500 transition-colors duration-300 text-xl md:text-3xl"
+        class="text-white hover:text-green-500 transition-colors duration-300 text-xl md:text-3xl animate-bounce"
       >
         <i class="pi pi-twitter"></i>
       </a>
     </div>
 
     <!-- Carousel Content -->
-    <div class="relative z-10 text-center px-4 md:px-8 space-y-4">
+    <div class="z-10 text-center px-4 md:px-8 space-y-4 animate-bounce-twice">
       <h2 class="text-4xl md:text-6xl lg:text-8xl font-bold leading-tight ">
         If you can imagine it <br />
         <span class="text-green-500">I can build it.</span>
@@ -63,5 +63,4 @@ import Button from "primevue/button";
 </template>
 
 <style scoped>
-/* Scoped styles to ensure no conflict */
 </style>
