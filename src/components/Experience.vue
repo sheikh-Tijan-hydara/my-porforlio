@@ -1,182 +1,58 @@
 <script setup>
-import ProgressBar from "primevue/progressbar";
-import CustomProgressBar from "./CustomProgressBar.vue";
+import Timeline from "primevue/timeline";
+
+const experience = [
+  {
+    title: "Software Developer",
+    company: "Writemedia Gambia Ltd",
+    date: "April 2023 - Present",
+    description:
+      "Collaborate with cross-functional teams to identify and prioritise features and requirements. Design system prototypes with Figma. Develop and maintain the applications using Vue js, Nuxt js, Next js. Conduct code reviews and provide feedback to improve code quality using Bitbucket and Github. Conduct springplannings and spring reviews with the customer. Collaborate with project managers to manage project progress using Team Work Platform .",
+  },
+  {
+    title: "Intern",
+    company: "Locumator",
+    date: "December 2022 - April 2023",
+    description:
+      "Collaborate with senior developer to identify and prioritise features and requirements. Design system prototypes with Figma. Develop and maintain the applications using React js, React Native , Next js. Joined Weekly project Update meetings",
+  },
+  {
+    title: "Intern",
+    company: "Hmz Enterprise",
+    date: "February 2022 - March 2022",
+    description:
+      "Learned the basics of web development. Developed a simple website using HTML, CSS, and JavaScript. Learned how to use Git and Github. Learned how to use Figma to design system prototypes.",
+  },
+  {
+     title: "Tutor",
+     company: "University of The Gambia School of Information and Communication Technology",
+     date: "August 2022 - September 2022",
+     description:
+       "Taught students the basics of web development. Developed a simple website using HTML, CSS, and JavaScript.",
+  }
+];
+
+
 </script>
+
 <template>
   <div
-    class="relative w-full lg:h-[90vh] h-auto flex items-center justify-center text-white bg-cover bg-center bg-no-repeat"
+    class="w-full lg:px-24 px-8 py-6 md:py-8  h-auto flex flex-col  justify-center text-white bg-neutral-950"
   >
-    <div class="flex lg:flex-row flex-col gap-16 w-full px-8">
-      <div class="flex flex-col gap-8 lg:w-1/2 w-full">
-        <h2 class="lg:text-4xl text-2xl font-bold pb-2 lg:mb-4">SOFTWARE SKILLS</h2>
-        <h4 class="text-xl font-semibold">WEB DESIGN</h4>
-        <div class="flex flex-row gap-4 items-center w-full">
-          <div class="flex lg:flex-row flex-col gap-4 justify-between lg:items-center w-full">
-            <div class="flex flex-row gap-4 lg:w-1/4 items-center">
-              <div class="border border-green-500 p-3 rounded">
-                <font-awesome-icon icon="fa-brands fa-figma" class="text-3xl" />
-              </div>
-              <p class="text-2xl font-semibold">Figma</p>
-            </div>
-            <div class="lg:w-9/12">
-                 <CustomProgressBar targetValue="70" />
-            </div>
-          </div>
+     <h2 class="lg:text-4xl text-2xl font-bold pb-2 mb-4">EXPERIENCE</h2>
+    <Timeline :value="experience" align="alternate" class="customized-timeline">
+      <template #marker="slotProps">
+        <div class="border border-green-500 p-8 rounded-xl">
+          <p class="font-bold text-xl">{{ slotProps.item.title }}</p>
         </div>
-        <h4 class="text-xl font-semibold">WEB DEVELOPMENT</h4>
-
-        <div class="flex flex-row gap-4 items-center w-full">
-          <div class="flex lg:flex-row flex-col gap-4 justify-between lg:items-center w-full">
-            <div class="flex flex-row gap-4 lg:w-1/4 items-center">
-              <div class="border border-green-500 p-3 rounded">
-                <font-awesome-icon icon="fa-brands fa-vuejs" class="text-3xl" />
-              </div>
-              <p class="text-2xl font-semibold">JavaScript</p>
-            </div>
-            <div class="lg:w-9/12">
-              <CustomProgressBar targetValue="95" />
-            </div>
-          </div>
+      </template>
+      <template #content="slotProps">
+        <div class="p-4 flex flex-col gap-4 animate-bounce-twice">
+          <h3 class="font-bold text-2xl">{{ slotProps.item.company }}</h3>
+          <p class="font-semibold text-lg">{{ slotProps.item.date }}</p>
+          <p class="text-lg">{{ slotProps.item.description }}</p>
         </div>
-        <div class="flex flex-row gap-4 items-center w-full">
-          <div class="flex lg:flex-row flex-col gap-4 justify-between lg:items-center w-full">
-            <div class="flex flex-row gap-4 lg:w-1/4 items-center">
-              <div class="border border-green-500 p-3 rounded">
-                <font-awesome-icon icon="fa-brands fa-vuejs" class="text-3xl" />
-              </div>
-              <p class="text-2xl font-semibold">Vue js</p>
-            </div>
-            <div class="lg:w-9/12">
-                 <CustomProgressBar targetValue="95" />
-            </div>
-          </div>
-        </div>
-        <div class="flex flex-row gap-4 items-center w-full">
-          <div class="flex lg:flex-row flex-col gap-4 justify-between lg:items-center w-full">
-            <div class="flex flex-row gap-4 lg:w-1/4 items-center">
-              <div class="border border-green-500 p-3 rounded">
-                <font-awesome-icon icon="fa-brands fa-react" class="text-3xl" />
-              </div>
-              <p class="text-2xl font-semibold">React js</p>
-            </div>
-            <div class="lg:w-9/12">
-                     <CustomProgressBar targetValue="95" />
-            </div>
-          </div>
-        </div>
-        <div class="flex flex-row gap-4 items-center w-full">
-          <div class="flex lg:flex-row flex-col gap-4 justify-between lg:items-center w-full">
-            <div class="flex flex-row gap-4 lg:w-1/4 items-center">
-              <div class="border border-green-500 p-3 rounded">
-                <font-awesome-icon
-                  icon="fa-solid fa-mobile-screen"
-                  class="text-3xl"
-                />
-              </div>
-              <p class="text-2xl font-semibold">React Native</p>
-            </div>
-            <div class="lg:w-9/12">
-                     <CustomProgressBar targetValue="95" />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="flex flex-col gap-8 lg:w-1/2 w-full">
-        <h2 class="lg:text-4xl text-2xl font-bold pb-2 lg:mb-4 hidden lg:block">PERSONAL SKILLS</h2>
-        <div class="lg:flex flex-row gap-4 items-center w-full hidden">
-          <div class="flex lg:flex-row flex-col gap-4 justify-between lg:items-center w-full">
-            <div class="flex flex-row gap-4 lg:w-1/4 items-center">
-              <div class="border border-green-500 p-3 rounded">
-                <font-awesome-icon icon="fa-solid fa-pencil" class="text-3xl" />
-              </div>
-              <p class="text-2xl font-semibold">Creativity</p>
-            </div>
-            <div class="lg:w-9/12">
-              <CustomProgressBar targetValue="100" />
-            </div>
-          </div>
-        </div>
-        <div class="lg:flex flex-row gap-4 items-center w-full hidden">
-          <div class="flex lg:flex-row flex-col gap-4 justify-between lg:items-center w-full">
-            <div class="flex flex-row gap-4 lg:w-1/4 items-center">
-              <div class="border border-green-500 p-3 rounded">
-                <font-awesome-icon icon="fa-solid fa-users" class="text-3xl" />
-              </div>
-              <p class="text-2xl font-semibold">Team Work</p>
-            </div>
-            <div class="lg:w-9/12">
-                 <CustomProgressBar targetValue="100" />
-            </div>
-          </div>
-        </div>
-        <div class="lg:flex flex-row gap-4 items-center w-full hidden">
-          <div class="flex lg:flex-row flex-col gap-4 justify-between lg:items-center w-full">
-            <div class="flex flex-row gap-1 lg:w-1/4 items-center">
-              <div class="border border-green-500 p-3 rounded">
-                <font-awesome-icon icon="fa-solid fa-sitemap" class="text-3xl" />
-              </div>
-              <p class="text-2xl font-semibold">Organisation</p>
-            </div>
-            <div class="lg:w-9/12">
-                     <CustomProgressBar targetValue="100" />
-            </div>
-          </div>
-        </div>
-        <div class="lg:flex flex-row gap-4 items-center w-full hidden">
-          <div class="flex lg:flex-row flex-col gap-4 justify-between lg:items-center w-full">
-            <div class="flex flex-row gap-1 lg:w-1/4 items-center">
-              <div class="border border-green-500 p-3 rounded">
-                <font-awesome-icon icon="fa-solid fa-person-chalkboard" class="text-3xl" />
-              </div>
-              <p class="text-2xl font-semibold">Presentation</p>
-            </div>
-            <div class="lg:w-9/12">
-                         <CustomProgressBar targetValue="100" />
-            </div>
-          </div>
-        </div>
-
-        <h2 class="lg:text-4xl text-2xl font-bold pb-2 lg:mb-4 lg:block hidden">LANGUAGES</h2>
-        <div class="lg:flex flex-row gap-4 items-center w-full hidden">
-          <div class="flex lg:flex-row flex-col gap-4 justify-between lg:items-center w-full">
-            <div class="flex flex-row gap-2 lg:w-1/4 items-center">
-              <div class="border border-green-500 p-3 rounded">
-                <font-awesome-icon icon="fa-solid fa-language" class="text-3xl" />
-              </div>
-              <p class="text-2xl font-semibold">English</p>
-            </div>
-            <div class="lg:w-9/12">
-              <CustomProgressBar targetValue="100" />
-            </div>
-          </div>
-        </div>
-        <div class="lg:flex flex-row gap-4 items-center w-full hidden">
-          <div class="flex lg:flex-row flex-col gap-4 justify-between lg:items-center w-full">
-            <div class="flex flex-row gap-2 lg:w-1/4 items-center">
-              <div class="border border-green-500 p-3 rounded">
-                <font-awesome-icon icon="fa-solid fa-language" class="text-3xl" />
-              </div>
-              <p class="text-2xl font-semibold">French</p>
-            </div>
-            <div class="lg:w-9/12">
-                 <CustomProgressBar targetValue="75" />
-            </div>
-          </div>
-        </div>
-        <div class="lg:flex flex-row gap-4 items-center w-full hidden">
-          <div class="flex lg:flex-row flex-col gap-4 justify-between lg:items-center w-full">
-            <div class="flex flex-row gap-2 lg:w-1/4 items-center">
-              <div class="border border-green-500 p-3 rounded">
-                <font-awesome-icon icon="fa-solid fa-language" class="text-3xl" />
-              </div>
-              <p class="text-2xl font-semibold">Spanish</p>
-            </div>
-            <div class="lg:w-9/12">
-                     <CustomProgressBar targetValue="30" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+      </template>
+    </Timeline>
   </div>
 </template>

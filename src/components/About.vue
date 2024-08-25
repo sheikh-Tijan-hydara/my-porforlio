@@ -2,7 +2,7 @@
 
 <template>
      <div
-       class="relative px-8 py-6  md:py-8 w-full lg:h-[60vh] h-[40vh] flex items-center justify-center text-white bg-cover bg-center bg-no-repeat"
+       class="relative px-8 py-6 md:py-8 w-full lg:h-[60vh] h-[40vh] flex items-center justify-center text-white bg-cover bg-center bg-no-repeat"
        :style="{ backgroundImage: 'url(/about.jpg)', backgroundSize: 'cover' }"
      >
        <!-- Dark Overlay -->
