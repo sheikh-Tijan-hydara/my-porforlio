@@ -32,27 +32,65 @@ const experience = [
   }
 ];
 
+const timelineAlign = ref('left'); // Default for small screens
 
+// Function to check screen size and update alignment
+const updateTimelineAlign = () => {
+  if (window.innerWidth >= 1024) {
+    timelineAlign.value = 'alternate'; // Large screens
+  } else {
+    timelineAlign.value = 'left'; // Small screens
+  }
+};
+
+// Watch for screen size changes
+onMounted(() => {
+  updateTimelineAlign();
+  window.addEventListener('resize', updateTimelineAlign);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', updateTimelineAlign);
+});
 </script>
 
 <template>
   <div
-    class="w-full lg:px-24 px-8 py-6 md:py-8  h-auto flex flex-col  justify-center text-white bg-neutral-950"
+    class="w-full lg:px-24 px-4 py-6 md:py-8  h-auto flex flex-col justify-center text-white bg-neutral-950"
   >
      <h2 class="lg:text-4xl text-2xl font-bold pb-2 mb-4">EXPERIENCE</h2>
-    <Timeline :value="experience" align="alternate" class="customized-timeline">
+    <Timeline :value="experience" :align="timelineAlign" class="customized-timeline" :pt="{opposite: 'hidden'}">
       <template #marker="slotProps">
-        <div class="border border-green-500 p-8 rounded-xl">
+        <div class="border border-green-500 lg:p-8 p-3 rounded-xl">
           <p class="font-bold lg:text-xl text-lg">{{ slotProps.item.title }}</p>
         </div>
       </template>
       <template #content="slotProps">
-        <div class="p-4 flex flex-col gap-4 animate-bounce-twice">
+        <div class="lg:p-4 flex flex-col gap-4 animate-bounce-twice">
           <h3 class="font-bold lg:text-2xl">{{ slotProps.item.company }}</h3>
           <p class="font-semibold lg:text-lg">{{ slotProps.item.date }}</p>
-          <p class="lg:text-lg text-sm">{{ slotProps.item.description }}</p>
+          <p class="lg:text-lg text-sm mb-4">{{ slotProps.item.description }}</p>
         </div>
       </template>
     </Timeline>
   </div>
 </template>
+
+
+<style scoped>
+@media screen and (max-width: 960px) {
+    ::v-deep(.customized-timeline) {
+        .p-timeline-event:nth-child(even) {
+            flex-direction: row;
+
+            .p-timeline-event-content {
+                text-align: left;
+            }
+        }
+
+        .p-timeline-event-opposite {
+            flex: 0;
+        }
+    }
+}
+</style>
