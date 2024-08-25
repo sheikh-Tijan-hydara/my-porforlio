@@ -43,14 +43,14 @@ const experience = [
     <Timeline :value="experience" align="alternate" class="customized-timeline">
       <template #marker="slotProps">
         <div class="border border-green-500 p-8 rounded-xl">
-          <p class="font-bold text-xl">{{ slotProps.item.title }}</p>
+          <p class="font-bold lg:text-xl text-lg">{{ slotProps.item.title }}</p>
         </div>
       </template>
       <template #content="slotProps">
         <div class="p-4 flex flex-col gap-4 animate-bounce-twice">
-          <h3 class="font-bold text-2xl">{{ slotProps.item.company }}</h3>
-          <p class="font-semibold text-lg">{{ slotProps.item.date }}</p>
-          <p class="text-lg">{{ slotProps.item.description }}</p>
+          <h3 class="font-bold lg:text-2xl">{{ slotProps.item.company }}</h3>
+          <p class="font-semibold lg:text-lg">{{ slotProps.item.date }}</p>
+          <p class="lg:text-lg text-sm">{{ slotProps.item.description }}</p>
         </div>
       </template>
     </Timeline>
