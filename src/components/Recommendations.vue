@@ -24,7 +24,7 @@ import Avatar from 'primevue/avatar';
                 <Avatar image="/fatou.jpeg" class="mr-2 ring-4" size="xlarge" shape="circle" />
               </Tab>
               <Tab value="1">
-                <Avatar image="/fatou.jpeg" class="mr-2 ring-4" size="xlarge" shape="circle" />
+                <Avatar image="/fabala.jpeg" class="mr-2 ring-4" size="xlarge" shape="circle" />
               </Tab>
               <Tab value="2">
                 <Avatar image="/fatou.jpeg" class="mr-2  ring-4" size="xlarge" shape="circle" />
