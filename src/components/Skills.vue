@@ -135,7 +135,7 @@ import CustomProgressBar from "./CustomProgressBar.vue";
           </div>
         </div>
 
-        <h2 class="lg:text-4xl text-2xl font-bold  lg:mb-2 lg:block hidden">EDUCATION</h2>
+        <h2 class="lg:text-4xl text-2xl font-bold  lg:mb-2 ">EDUCATION</h2>
         <div class="flex flex-row gap-4 items-center w-full">
           <div class="flex lg:flex-row flex-col gap-8 lg:items-center w-full">
             <div class="flex flex-row gap-2  items-center">

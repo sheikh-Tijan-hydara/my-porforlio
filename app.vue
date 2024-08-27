@@ -38,3 +38,9 @@ import "primeicons/primeicons.css";
     </div>
   </div>
 </template>
+
+<style>
+html {
+  scroll-behavior: smooth;
+}
+</style>

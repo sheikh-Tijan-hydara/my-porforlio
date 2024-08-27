@@ -17,24 +17,24 @@ const visible = ref(false);
 
     <!-- Navigation Section -->
     <nav class="space-x-8 text-xl font-bold text-white hidden lg:block">
-      <NuxtLink
-        to="#about"
+      <a
+        href="#about"
         class="hover:text-green-500 transition-colors duration-300"
       >
         ABOUT ME
-      </NuxtLink>
-      <NuxtLink
-        to="#experience"
+    </a>
+      <a
+        href="#experience"
         class="hover:text-green-500 transition-colors duration-300"
       >
         EXPERIENCE
-      </NuxtLink>
-      <NuxtLink
-        to="#projects"
+  </a>
+      <a
+        href="#projects"
         class="hover:text-green-500 transition-colors duration-300"
       >
         PROJECTS
-      </NuxtLink>
+</a>
     </nav>
 
     <!-- Mobile Navigation Section -->
@@ -52,24 +52,24 @@ const visible = ref(false);
               />
             </div>
             <nav class="flex flex-col space-y-12 text-xl px-2 font-bold text-white">
-              <NuxtLink
-                to="#about"
+              <a
+                href="#about"
                 class="hover:text-green-500 transition-colors duration-300"
               >
                 ABOUT ME
-              </NuxtLink>
-              <NuxtLink
-                to="#experience"
+            </a>
+              <a
+                href="#experience"
                 class="hover:text-green-500 transition-colors duration-300"
               >
                 EXPERIENCE
-              </NuxtLink>
-              <NuxtLink
-                to="#projects"
+          </a>
+              <a
+                href="#projects"
                 class="hover:text-green-500 transition-colors duration-300"
               >
                 PROJECTS
-              </NuxtLink>
+        </a>
             </nav>
             <div class="mt-auto flex justify-around py-4">
 

@@ -3,14 +3,14 @@
      <p class="lg:text-2xl">&copy; 2024</p>
      <p class="lg:text-2xl">GET IN TOUCH</p>
      <a
-        href="https://www.linkedin.com/in/your-linkedin"
+        href="https://www.linkedin.com/in/sheikh-tijan-hydara-60602621a/"
         target="_blank"
         class="text-white hover:text-green-500 transition-colors duration-300 text-xl md:text-3xl "
       >
         <i class="pi pi-linkedin lg:text-3xl"></i>
       </a>
       <a
-        href="https://github.com/your-github"
+        href="https://github.com/sheikh-Tijan-hydara"
         target="_blank"
         class="text-white hover:text-green-500 transition-colors duration-300 text-xl md:text-3xl "
       >
