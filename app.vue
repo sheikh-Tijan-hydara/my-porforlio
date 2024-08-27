@@ -30,9 +30,9 @@ import "primeicons/primeicons.css";
     <div class="lg:px-24 px-2" id="projects">
       <Projects />
     </div>
-    <!-- <div class="" id="recommendations">
+    <div class="" id="recommendations">
       <Recommendations />
-    </div> -->
+    </div>
     <div class="lg:px-24 px-2">
       <Footer />
     </div>
