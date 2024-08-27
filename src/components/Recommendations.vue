@@ -31,7 +31,7 @@ import Card from "primevue/card";
                      class="w-10 h-10 lg:w-24 lg:h-24 rounded-full"
                    />
                    <span class="text-lg lg:text-2xl font-bold whitespace-nowrap">
-                     Ryan Dansie
+                     Fabala Dibbersy
                    </span>
                  </div>
                </Tab>
@@ -78,8 +78,7 @@ import Card from "primevue/card";
              <!-- Tab Panels -->
              <TabPanels class="mt-6">
                <!-- Panel 1 -->
-               <TabPanel value="0" as="p" class="text-base lg:text-lg italic">
-                 <p class="px-4 lg:px-24 text-xl lg:text-2xl">
+               <TabPanel value="0"  class="px-4 lg:px-24 text-xl lg:text-2xl italic">
                    "I have had the pleasure of working closely with Sheikh Tijan
                    on several projects, and I am impressed by his talent and
                    dedication as both a frontend developer and designer. His
@@ -87,7 +86,6 @@ import Card from "primevue/card";
                    responsive code is truly exceptional. I also admire his skills
                    in adopting the latest technologies, problem-solving, and
                    teamwork."
-                 </p>
                </TabPanel>
                <!-- Panel 2 -->
                <TabPanel value="1" as="p" class="text-base lg:text-lg italic">

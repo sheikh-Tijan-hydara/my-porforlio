@@ -28,7 +28,7 @@ import CustomProgressBar from "./CustomProgressBar.vue";
           <div class="flex lg:flex-row flex-col gap-4 justify-between lg:items-center w-full">
             <div class="flex flex-row gap-4 lg:w-1/4 items-center">
               <div class="border border-green-500 p-3 rounded">
-                <font-awesome-icon icon="fa-brands fa-vuejs" class="text-3xl" />
+                <font-awesome-icon icon="fa-brands fa-js" class="text-3xl" />
               </div>
               <p class="text-2xl font-semibold">JavaScript</p>
             </div>
@@ -135,17 +135,18 @@ import CustomProgressBar from "./CustomProgressBar.vue";
           </div>
         </div>
 
-        <h2 class="lg:text-4xl text-2xl font-bold pb-2 lg:mb-4 lg:block hidden">LANGUAGES</h2>
+        <h2 class="lg:text-4xl text-2xl font-bold  lg:mb-2 lg:block hidden">EDUCATION</h2>
         <div class="lg:flex flex-row gap-4 items-center w-full hidden">
-          <div class="flex lg:flex-row flex-col gap-4 justify-between lg:items-center w-full">
-            <div class="flex flex-row gap-2 lg:w-1/4 items-center">
+          <div class="flex lg:flex-row flex-col gap-8 lg:items-center w-full">
+            <div class="flex flex-row gap-2  items-center">
               <div class="border border-green-500 p-3 rounded">
                 <font-awesome-icon icon="fa-solid fa-language" class="text-3xl" />
               </div>
-              <p class="text-2xl font-semibold">English</p>
+              <p class="text-2xl font-semibold">Bachelors in computer science</p>
             </div>
-            <div class="lg:w-9/12">
-              <CustomProgressBar targetValue="100" />
+            <div class="">
+              <!-- <CustomProgressBar targetValue="100" /> -->
+              <p class="text-lg ">University Of The Gambia</p>
             </div>
           </div>
         </div>
@@ -155,7 +156,7 @@ import CustomProgressBar from "./CustomProgressBar.vue";
               <div class="border border-green-500 p-3 rounded">
                 <font-awesome-icon icon="fa-solid fa-language" class="text-3xl" />
               </div>
-              <p class="text-2xl font-semibold">French</p>
+              <p class="text-2xl font-semibold">Universidad De Jaen, Spain</p>
             </div>
             <div class="lg:w-9/12">
                  <CustomProgressBar targetValue="75" />

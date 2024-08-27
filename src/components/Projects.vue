@@ -4,7 +4,7 @@ import Card from "primevue/card";
 
 <template>
   <div class="w-full h-auto flex flex-col p-4 text-white bg-neutral-950">
-    <h2 class="lg:text-4xl text-2xl font-bold pb-2 mb-4">Featured Projects</h2>
+    <h2 class="lg:text-4xl text-2xl font-bold pb-2 mb-4">Top Featured Projects</h2>
     <div class="flex flex-wrap items-center justify-center gap-8">
       <a
         href="https://agrify.wales/"
@@ -23,7 +23,15 @@ import Card from "primevue/card";
             />
           </template>
           <template #title>
+            <div class="flex flex-col">
             <h3 class="font-bold text-3xl mb-4">Agrify</h3>
+            <div class="flex flex-wrap gap-4">
+              <p class="py-2 px-4 text-sm rounded-full bg-neutral-950">Nuxt js</p>
+              <p class="py-2 px-4 text-sm rounded-full bg-neutral-950">Tailwindcss</p>
+              <p class="py-2 px-4 text-sm rounded-full bg-neutral-950">Typescript</p>
+              <p class="py-2 px-4 text-sm rounded-full bg-neutral-950">Nodejs</p>
+            </div>
+          </div>
           </template>
           <template #content>
             <p class="m-0">
@@ -51,7 +59,15 @@ import Card from "primevue/card";
             />
           </template>
           <template #title>
-            <h3 class="font-bold text-3xl">Swatch Editor</h3>
+            <div class="flex flex-col">
+            <h3 class="font-bold text-3xl mb-4">Swatch Editor</h3>
+            <div class="flex flex-wrap gap-4">
+              <p class="py-2 px-4 text-sm rounded-full bg-neutral-950">Next js</p>
+              <p class="py-2 px-4 text-sm rounded-full bg-neutral-950">Tailwindcss</p>
+              <p class="py-2 px-4 text-sm rounded-full bg-neutral-950">Typescript</p>
+              <p class="py-2 px-4 text-sm rounded-full bg-neutral-950">Threejs</p>
+            </div>
+            </div>
           </template>
           <template #content>
             <p class="m-0">
@@ -78,7 +94,15 @@ import Card from "primevue/card";
             />
           </template>
           <template #title>
-            <h3 class="font-bold text-3xl">The Development Wheel</h3>
+            <div class="flex flex-col">
+            <h3 class="font-bold text-3xl mb-4">The Development Wheel</h3>
+            <div class="flex flex-wrap gap-4">
+              <p class="py-2 px-4 text-sm rounded-full bg-neutral-950">Nuxt js</p>
+              <p class="py-2 px-4 text-sm rounded-full bg-neutral-950">Tailwindcss</p>
+              <p class="py-2 px-4 text-sm rounded-full bg-neutral-950">Typescript</p>
+              <p class="py-2 px-4 text-sm rounded-full bg-neutral-950">Primevue</p>
+            </div>
+            </div>
           </template>
           <template #content>
             <p class="m-0">
@@ -101,7 +125,15 @@ import Card from "primevue/card";
             />
           </template>
           <template #title>
-            <h3 class="font-bold text-3xl">Techknital</h3>
+            <div class="flex flex-col">
+            <h3 class="font-bold text-3xl mb-4">Techknital</h3>
+            <div class="flex flex-wrap gap-4">
+              <p class="py-2 px-4 text-sm rounded-full bg-neutral-950">Vue js</p>
+              <p class="py-2 px-4 text-sm rounded-full bg-neutral-950">Tailwindcss</p>
+              <p class="py-2 px-4 text-sm rounded-full bg-neutral-950">Typescript</p>
+              <p class="py-2 px-4 text-sm rounded-full bg-neutral-950">Primevue</p>
+            </div>
+            </div>
           </template>
           <template #content>
             <p class="m-0">
@@ -129,7 +161,14 @@ import Card from "primevue/card";
             />
           </template>
           <template #title>
-            <h3 class="font-bold text-3xl">Barki Neneh Business Website</h3>
+            <div class="flex flex-col">
+            <h3 class="font-bold text-3xl mb-4">Barki Neneh Business Website</h3>
+            <div class="flex flex-wrap gap-4">
+              <p class="py-2 px-4 text-sm rounded-full bg-neutral-950">Next js</p>
+              <p class="py-2 px-4 text-sm rounded-full bg-neutral-950">Tailwindcss</p>
+              <p class="py-2 px-4 text-sm rounded-full bg-neutral-950">Shadcn UI</p>
+            </div>
+            </div>
           </template>
           <template #content>
             <p class="m-0">
@@ -156,7 +195,13 @@ import Card from "primevue/card";
             />
           </template>
           <template #title>
-            <h3 class="font-bold text-3xl">Famsa Gambia</h3>
+            <div class="flex flex-col">
+            <h3 class="font-bold text-3xl mb-4">Famsa Gambia</h3>
+            <div class="flex flex-wrap gap-4">
+              <p class="py-2 px-4 text-sm rounded-full bg-neutral-950">React js</p>
+              <p class="py-2 px-4 text-sm rounded-full bg-neutral-950">Tailwindcss</p>
+            </div>
+            </div>
           </template>
           <template #content>
             <p class="m-0">

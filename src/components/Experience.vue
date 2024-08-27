@@ -3,7 +3,7 @@ import Timeline from "primevue/timeline";
 
 const experience = [
   {
-    title: "Software Developer",
+    title: "Fulltime",
     company: "Writemedia Gambia Ltd",
     date: "April 2023 - Present",
     description:
@@ -61,12 +61,12 @@ onBeforeUnmount(() => {
      <h2 class="lg:text-4xl text-2xl font-bold pb-2 mb-4">EXPERIENCE</h2>
     <Timeline :value="experience" :align="timelineAlign" class="customized-timeline" :pt="{opposite: 'hidden'}">
       <template #marker="slotProps">
-        <div class="border border-green-500 lg:p-8 p-3 rounded-xl">
+        <div class="border border-green-500 lg:p-4 p-3 rounded-full">
           <p class="font-bold lg:text-xl text-lg">{{ slotProps.item.title }}</p>
         </div>
       </template>
       <template #content="slotProps">
-        <div class="lg:p-4 flex flex-col gap-4 animate-bounce-twice">
+        <div class="lg:p-4 flex flex-col gap-4 animate-bounce-twice transform hover:scale-105 transition duration-300 ease-in-out">
           <h3 class="font-bold lg:text-2xl">{{ slotProps.item.company }}</h3>
           <p class="font-semibold lg:text-lg">{{ slotProps.item.date }}</p>
           <p class="lg:text-lg text-sm mb-4">{{ slotProps.item.description }}</p>
