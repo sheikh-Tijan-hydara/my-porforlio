@@ -136,46 +136,33 @@ import CustomProgressBar from "./CustomProgressBar.vue";
         </div>
 
         <h2 class="lg:text-4xl text-2xl font-bold  lg:mb-2 lg:block hidden">EDUCATION</h2>
-        <div class="lg:flex flex-row gap-4 items-center w-full hidden">
+        <div class="flex flex-row gap-4 items-center w-full">
           <div class="flex lg:flex-row flex-col gap-8 lg:items-center w-full">
             <div class="flex flex-row gap-2  items-center">
               <div class="border border-green-500 p-3 rounded">
-                <font-awesome-icon icon="fa-solid fa-language" class="text-3xl" />
+                <font-awesome-icon icon="fa-solid fa-graduation-cap" class="text-3xl" />
               </div>
+              <div class="flex flex-col">
               <p class="text-2xl font-semibold">Bachelors in computer science</p>
-            </div>
-            <div class="">
-              <!-- <CustomProgressBar targetValue="100" /> -->
               <p class="text-lg ">University Of The Gambia</p>
             </div>
+            </div>
           </div>
         </div>
-        <div class="lg:flex flex-row gap-4 items-center w-full hidden">
+        <div class="flex flex-row gap-4 items-center w-full mb-4 lg:mb-0">
           <div class="flex lg:flex-row flex-col gap-4 justify-between lg:items-center w-full">
-            <div class="flex flex-row gap-2 lg:w-1/4 items-center">
+            <div class="flex flex-row gap-2 items-center">
               <div class="border border-green-500 p-3 rounded">
-                <font-awesome-icon icon="fa-solid fa-language" class="text-3xl" />
+                <font-awesome-icon icon="fa-solid fa-graduation-cap" class="text-3xl" />
               </div>
-              <p class="text-2xl font-semibold">Universidad De Jaen, Spain</p>
+              <div class="flex flex-col">
+              <p class="text-2xl font-semibold">Erasmus student exchange program</p>
+              <p class="text-lg ">Universidad de Jaen</p>
             </div>
-            <div class="lg:w-9/12">
-                 <CustomProgressBar targetValue="75" />
             </div>
           </div>
         </div>
-        <div class="lg:flex flex-row gap-4 items-center w-full hidden">
-          <div class="flex lg:flex-row flex-col gap-4 justify-between lg:items-center w-full">
-            <div class="flex flex-row gap-2 lg:w-1/4 items-center">
-              <div class="border border-green-500 p-3 rounded">
-                <font-awesome-icon icon="fa-solid fa-language" class="text-3xl" />
-              </div>
-              <p class="text-2xl font-semibold">Spanish</p>
-            </div>
-            <div class="lg:w-9/12">
-                     <CustomProgressBar targetValue="30" />
-            </div>
-          </div>
-        </div>
+        
       </div>
     </div>
   </div>
