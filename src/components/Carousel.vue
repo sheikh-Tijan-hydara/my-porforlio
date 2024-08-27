@@ -11,16 +11,16 @@ import Button from "primevue/button";
     <div class="absolute inset-0 bg-neutral-900 opacity-70"></div>
 
     <!-- Social Media Icons -->
-    <div class="absolute left-4 md:left-6 top-1/2 transform -translate-y-1/2 flex flex-col gap-6 md:gap-8">
+    <div class="absolute left-4 md:left-6 top-1/2 transform -translate-y-1/2 lg:flex flex-col gap-6 md:gap-8 hidden">
       <a
-        href="https://www.linkedin.com/in/your-linkedin"
+        href="https://www.linkedin.com/in/sheikh-tijan-hydara-60602621a/"
         target="_blank"
         class="text-white hover:text-green-500 transition-colors duration-300 text-xl md:text-3xl animate-bounce"
       >
         <i class="pi pi-linkedin"></i>
       </a>
       <a
-        href="https://github.com/your-github"
+        href="https://github.com/sheikh-Tijan-hydara"
         target="_blank"
         class="text-white hover:text-green-500 transition-colors duration-300 text-xl md:text-3xl animate-bounce"
       >

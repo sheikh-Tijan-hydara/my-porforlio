@@ -74,12 +74,12 @@ const visible = ref(false);
             <div class="mt-auto flex justify-around py-4">
 
               <a
-                href="https://www.linkedin.com/in/your-linkedin"
+                href="https://www.linkedin.com/in/sheikh-tijan-hydara-60602621a/"
                 target="_blank"
               >
                 <i class="pi pi-linkedin" style="font-size: 3rem"></i>
               </a>
-              <a href="/" target="_blank">
+              <a href="https://github.com/sheikh-Tijan-hydara" target="_blank">
                 <i class="pi pi-github" style="font-size: 3rem"></i>
               </a>
             </div>
