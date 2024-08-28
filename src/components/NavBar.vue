@@ -8,7 +8,7 @@ const visible = ref(false);
 
 <template>
   <div
-    class="mx-auto w-full  lg:px-8 px-2 flex items-center justify-between lg:border lg:border-green-500 rounded-full "
+    class="mx-auto w-full  lg:px-8 px-2 flex items-center justify-between  "
   >
     <!-- Logo Section -->
     <div class="flex items-center">

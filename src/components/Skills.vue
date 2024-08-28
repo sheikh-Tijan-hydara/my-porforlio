@@ -11,7 +11,7 @@ import CustomProgressBar from "./CustomProgressBar.vue";
         <h4 class="text-xl font-semibold">WEB DESIGN</h4>
         <div class="flex flex-row gap-4 items-center w-full">
           <div class="flex lg:flex-row flex-col gap-4 justify-between lg:items-center w-full">
-            <div class="flex flex-row gap-4 lg:w-1/4 items-center">
+            <div class="flex flex-row gap-4 lg:w-1/4 items-center mb-4">
               <div class="border border-green-500 p-3 rounded">
                 <font-awesome-icon icon="fa-brands fa-figma" class="text-3xl" />
               </div>
@@ -84,58 +84,58 @@ import CustomProgressBar from "./CustomProgressBar.vue";
         <h2 class="lg:text-4xl text-2xl font-bold pb-2 lg:mb-4 hidden lg:block">PERSONAL SKILLS</h2>
         <div class="lg:flex flex-row gap-4 items-center w-full hidden">
           <div class="flex lg:flex-row flex-col gap-4 justify-between lg:items-center w-full">
-            <div class="flex flex-row gap-4 lg:w-1/4 items-center">
+            <div class="flex flex-row gap-4 lg:w-1/3 items-center">
               <div class="border border-green-500 p-3 rounded">
                 <font-awesome-icon icon="fa-solid fa-pencil" class="text-3xl" />
               </div>
               <p class="text-2xl font-semibold">Creativity</p>
             </div>
-            <div class="lg:w-9/12">
+            <div class="lg:w-2/3">
               <CustomProgressBar targetValue="100" />
             </div>
           </div>
         </div>
         <div class="lg:flex flex-row gap-4 items-center w-full hidden">
           <div class="flex lg:flex-row flex-col gap-4 justify-between lg:items-center w-full">
-            <div class="flex flex-row gap-4 lg:w-1/4 items-center">
+            <div class="flex flex-row gap-4 lg:w-1/3 items-center">
               <div class="border border-green-500 p-3 rounded">
                 <font-awesome-icon icon="fa-solid fa-users" class="text-3xl" />
               </div>
               <p class="text-2xl font-semibold">Team Work</p>
             </div>
-            <div class="lg:w-9/12">
+            <div class="lg:w-2/3">
                  <CustomProgressBar targetValue="100" />
             </div>
           </div>
         </div>
         <div class="lg:flex flex-row gap-4 items-center w-full hidden">
           <div class="flex lg:flex-row flex-col gap-4 justify-between lg:items-center w-full">
-            <div class="flex flex-row gap-1 lg:w-1/4 items-center">
+            <div class="flex flex-row gap-4 lg:w-1/3 items-center">
               <div class="border border-green-500 p-3 rounded">
                 <font-awesome-icon icon="fa-solid fa-sitemap" class="text-3xl" />
               </div>
               <p class="text-2xl font-semibold">Organisation</p>
             </div>
-            <div class="lg:w-9/12">
+            <div class="lg:w-2/3">
                      <CustomProgressBar targetValue="100" />
             </div>
           </div>
         </div>
-        <div class="lg:flex flex-row gap-4 items-center w-full hidden">
+        <div class="lg:flex flex-row gap-4 items-center w-full hidden mb-4">
           <div class="flex lg:flex-row flex-col gap-4 justify-between lg:items-center w-full">
-            <div class="flex flex-row gap-1 lg:w-1/4 items-center">
+            <div class="flex flex-row gap-4 lg:w-1/3 items-center">
               <div class="border border-green-500 p-3 rounded">
                 <font-awesome-icon icon="fa-solid fa-person-chalkboard" class="text-3xl" />
               </div>
               <p class="text-2xl font-semibold">Presentation</p>
             </div>
-            <div class="lg:w-9/12">
-                         <CustomProgressBar targetValue="100" />
+            <div class="lg:w-2/3">
+                <CustomProgressBar targetValue="100" />
             </div>
           </div>
         </div>
 
-        <h2 class="lg:text-4xl text-2xl font-bold  lg:mb-2 ">EDUCATION</h2>
+        <h2 class="lg:text-4xl text-2xl font-bold ">EDUCATION</h2>
         <div class="flex flex-row gap-4 items-center w-full">
           <div class="flex lg:flex-row flex-col gap-8 lg:items-center w-full">
             <div class="flex flex-row gap-2  items-center">
