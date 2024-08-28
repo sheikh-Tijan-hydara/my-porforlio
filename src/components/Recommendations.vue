@@ -42,7 +42,7 @@ const testimonials = [
       several projects and I am always impressed by his work.
     `,
     name: "Amadu Jallu",
-    title: "Lead Backend Developer, Nafa Gambia",
+    title: "Mid Level Backend Developer, Nafa financial services",
   },
 ];
 

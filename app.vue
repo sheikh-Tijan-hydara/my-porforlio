@@ -12,8 +12,8 @@ import "primeicons/primeicons.css";
 </script>
 
 <template>
-  <div class="w-full flex flex-col bg-neutral-900 relative">
-    <div class="lg:px-24 px-2 pt-8 sticky top-0 z-50 bg-black">
+  <div class="w-full flex flex-col bg-neutral-900 ">
+    <div class="lg:px-24 px-2 pt-2 sticky top-0 z-50 bg-black">
       <NavBar />
     </div>
     <div class="lg:px-24 px-2">
@@ -27,20 +27,6 @@ import "primeicons/primeicons.css";
     </div>
     <div id="experience">
       <Experience />
-    </div>
-    <div class="fixed right-10 bottom-10 z-10 hiddem lg-block" id="widget">
-          <a
-            href="https://www.linkedin.com/in/sheikh-tijan-hydara-60602621a/"
-            target="_blank"
-            class="my-4"
-          >
-            <button
-              type="button"
-              class="px-8 py-2 font-bold bg-green-500 round-corner hover:border hover:border-green-500 hover:bg-transparent hover:text-green-500 text-white transition-colors duration-300 text-sm md:text-base transform hover:scale-105 transition duration-300 ease-in-out"
-            >
-              Get in Touch
-            </button>
-          </a>
     </div>
     <div class="lg:px-24 px-2" id="projects">
       <Projects />
