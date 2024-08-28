@@ -1,5 +1,9 @@
 <script setup>
 import Button from "primevue/button";
+
+const handleDownloadResume = () => {
+  window.open("/resume.pdf", "_blank");
+};
 </script>
 
 <template>
@@ -46,6 +50,7 @@ import Button from "primevue/button";
       </p>
       <div class="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 py-4">
         <button
+          @click="handleDownloadResume"
           type="button"
           class="px-6 py-2 border font-bold border-green-500 hover:bg-green-500 hover:text-white text-green-500 transition-colors duration-300 text-sm md:text-base"
         >
