@@ -41,7 +41,7 @@ const testimonials = [
       others. I have had the pleasure of working with him on
       several projects and I am always impressed by his work.
     `,
-    name: "Amadu Jallu",
+    name: "Amadu Jallow",
     title: "Mid Level Backend Developer, Nafa financial services",
   },
 ];
