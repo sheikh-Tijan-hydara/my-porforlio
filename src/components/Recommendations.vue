@@ -52,7 +52,7 @@ let intervalId = null;
 const startSlideshow = () => {
   intervalId = setInterval(() => {
     currentIndex.value = (currentIndex.value + 1) % testimonials.length;
-  }, 5000); // Change slide every 5 seconds
+  }, 10000); // Change slide every 5 seconds
 };
 
 const stopSlideshow = () => {
