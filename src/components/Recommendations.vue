@@ -34,7 +34,7 @@ import Avatar from 'primevue/avatar';
               <TabPanel value="0">
                 <p class="m-0 italic">
                   I have had the pleasure of working closely with Sheikh Tijan
-                  on several and I am impressed by his talent and dedication as
+                  and I am impressed by his talent and dedication as
                   both a frontend developer and designer. <br/>His ability to
                   seamlessly blend aesthetic design with functional and
                   responsive code is truly exceptional. I also admire his skills

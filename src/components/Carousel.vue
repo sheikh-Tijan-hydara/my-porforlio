@@ -51,12 +51,14 @@ import Button from "primevue/button";
         >
           Download Resume
         </button>
-        <button
+        <a href="https://www.linkedin.com/in/sheikh-tijan-hydara-60602621a/" target="_blank">        <button
           type="button"
           class="px-8 py-2 font-bold bg-green-500 hover:border hover:border-green-500 hover:bg-transparent hover:text-green-500 text-white transition-colors duration-300 text-sm md:text-base"
         >
           Get In Touch
         </button>
+      </a>
+
       </div>
     </div>
   </div>
