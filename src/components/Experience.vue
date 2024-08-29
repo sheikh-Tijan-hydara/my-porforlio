@@ -61,8 +61,8 @@ onBeforeUnmount(() => {
      <h2 class="lg:text-4xl text-2xl font-bold pb-2 mb-4">EXPERIENCE</h2>
     <Timeline :value="experience" :align="timelineAlign" class="customized-timeline" :pt="{opposite: 'hidden'}">
       <template #marker="slotProps">
-        <div class="border border-green-500 lg:p-4 p-3 rounded-full">
-          <p class="font-bold lg:text-xl text-lg">{{ slotProps.item.title }}</p>
+        <div class="border border-green-500 lg:p-4 p-2 rounded">
+          <p class="font-bold lg:text-xl">{{ slotProps.item.title }}</p>
         </div>
       </template>
       <template #content="slotProps">
