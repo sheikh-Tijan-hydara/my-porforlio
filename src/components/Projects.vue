@@ -3,7 +3,7 @@ import Card from "primevue/card";
 </script>
 
 <template>
-  <div class="w-full h-auto flex flex-col p-4 text-white bg-neutral-950">
+  <div class="w-full h-auto flex flex-col lg:p-4 p-2 text-white bg-neutral-950">
     <h2 class="lg:text-4xl text-2xl font-bold pb-2 mb-4">
       Top Featured Projects
     </h2>
@@ -11,7 +11,7 @@ import Card from "primevue/card";
       <a
         href="https://agrify.wales/"
         target="_blank"
-        class="w-full sm:w-1/2 lg:w-2/5 p-2"
+        class="w-full lg:w-2/5 lg:h-[600px]"
       >
         <Card
           :pt="{
@@ -24,8 +24,8 @@ import Card from "primevue/card";
             mergeSections: false,
             mergeProps: false,
           }"
-          style="width: 90%; height: 60%; overflow: hidden"
-          class="h-[450px] w-full rounded-lg bg-neutral-800 overflow-hidden shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out"
+          style=" overflow: hidden"
+          class="h-full w-full rounded-lg bg-neutral-800 overflow-hidden shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out"
         >
           <template #header>
             <img
@@ -36,7 +36,7 @@ import Card from "primevue/card";
           </template>
           <template #title>
             <div class="flex flex-col">
-              <h3 class="font-bold text-3xl mb-4">Agrify</h3>
+              <h3 class="lg:font-bold text-3xl mb-4">Agrify</h3>
               <div class="flex flex-wrap gap-4">
                 <p class="py-2 px-4 text-sm rounded-full bg-neutral-950">
                   Nuxt js
@@ -65,7 +65,7 @@ import Card from "primevue/card";
       <a
         href="https://www.swatcheditor.com/"
         target="_blank"
-        class="w-full sm:w-1/2 lg:w-2/5 p-2"
+        class="w-full lg:w-2/5 lg:h-[600px]"
       >
         <Card
           :pt="{
@@ -78,7 +78,7 @@ import Card from "primevue/card";
             mergeSections: false,
             mergeProps: false,
           }"
-          style="width: 90%; overflow: hidden"
+          style=" overflow: hidden"
           class="h-full w-full rounded-lg bg-neutral-800 overflow-hidden shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out"
         >
           <template #header>
@@ -90,7 +90,7 @@ import Card from "primevue/card";
           </template>
           <template #title>
             <div class="flex flex-col">
-              <h3 class="font-bold text-3xl mb-4">Swatch Editor</h3>
+              <h3 class="lg:font-bold text-3xl mb-4">Swatch Editor</h3>
               <div class="flex flex-wrap gap-4">
                 <p class="py-2 px-4 text-sm rounded-full bg-neutral-950">
                   Next js
@@ -118,7 +118,7 @@ import Card from "primevue/card";
       <a
         href="https://thedevelopmentwheel.co.uk/"
         target="_blank"
-        class="w-full sm:w-1/2 lg:w-2/5 p-2"
+        class="w-full lg:w-2/5 lg:h-[600px]"
       >
         <Card
           :pt="{
@@ -131,7 +131,7 @@ import Card from "primevue/card";
             mergeSections: false,
             mergeProps: false,
           }"
-          style="width: 90%; overflow: hidden"
+          style=" overflow: hidden"
           class="h-full w-full rounded-lg bg-neutral-800 overflow-hidden shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out"
         >
           <template #header>
@@ -143,7 +143,7 @@ import Card from "primevue/card";
           </template>
           <template #title>
             <div class="flex flex-col">
-              <h3 class="font-bold text-3xl mb-4">The Development Wheel</h3>
+              <h3 class="lg:font-bold text-3xl mb-4">The Development Wheel</h3>
               <div class="flex flex-wrap gap-4">
                 <p class="py-2 px-4 text-sm rounded-full bg-neutral-950">
                   Nuxt js
@@ -168,7 +168,7 @@ import Card from "primevue/card";
           </template>
         </Card>
       </a>
-      <div class="w-full sm:w-1/2 lg:w-2/5 p-2">
+      <div class="w-full lg:w-2/5 lg:h-[600px]">
         <Card
           :pt="{
             root: {
@@ -180,7 +180,7 @@ import Card from "primevue/card";
             mergeSections: false,
             mergeProps: false,
           }"
-          style="width: 90%; overflow: hidden"
+          style=" overflow: hidden"
           class="h-full w-full rounded-lg bg-neutral-800 overflow-hidden shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out"
         >
           <template #header>
@@ -192,7 +192,7 @@ import Card from "primevue/card";
           </template>
           <template #title>
             <div class="flex flex-col">
-              <h3 class="font-bold text-3xl mb-4">Techknital</h3>
+              <h3 class="lg:font-bold text-3xl mb-4">Techknital</h3>
               <div class="flex flex-wrap gap-4">
                 <p class="py-2 px-4 text-sm rounded-full bg-neutral-950">
                   Vue js
@@ -221,7 +221,7 @@ import Card from "primevue/card";
       <a
         href="https://barki-neneh-site.vercel.app/"
         target="_blank"
-        class="w-full sm:w-1/2 lg:w-2/5 p-2"
+        class="w-full lg:w-2/5 lg:h-[600px]"
       >
         <Card
           :pt="{
@@ -234,7 +234,7 @@ import Card from "primevue/card";
             mergeSections: false,
             mergeProps: false,
           }"
-          style="width: 90%; overflow: hidden"
+          style=" overflow: hidden"
           class="h-full w-full rounded-lg bg-neutral-800 overflow-hidden shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out"
         >
           <template #header>
@@ -246,7 +246,7 @@ import Card from "primevue/card";
           </template>
           <template #title>
             <div class="flex flex-col">
-              <h3 class="font-bold text-3xl mb-4">
+              <h3 class="lg:font-bold text-3xl mb-4">
                 Barki Neneh Business Website
               </h3>
               <div class="flex flex-wrap gap-4">
@@ -273,7 +273,7 @@ import Card from "primevue/card";
       <a
         href="https://famsa-web-project.vercel.app/"
         target="_blank"
-        class="w-full sm:w-1/2 lg:w-2/5 p-2"
+        class="w-full lg:w-2/5 lg:h-[600px]"
       >
         <Card
           :pt="{
@@ -286,7 +286,7 @@ import Card from "primevue/card";
             mergeSections: false,
             mergeProps: false,
           }"
-          style="width: 90%; overflow: hidden"
+          style=" overflow: hidden"
           class="h-full w-full rounded-lg bg-neutral-800 overflow-hidden shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out"
         >
           <template #header>
@@ -298,7 +298,7 @@ import Card from "primevue/card";
           </template>
           <template #title>
             <div class="flex flex-col">
-              <h3 class="font-bold text-3xl mb-4">Famsa Gambia</h3>
+              <h3 class="lg:font-bold text-3xl mb-4">Famsa Gambia</h3>
               <div class="flex flex-wrap gap-4">
                 <p class="py-2 px-4 text-sm rounded-full bg-neutral-950">
                   React js
