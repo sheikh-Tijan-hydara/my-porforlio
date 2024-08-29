@@ -7,7 +7,7 @@ const experience = [
     company: "Writemedia Gambia Ltd",
     date: "April 2023 - Present",
     description:
-      "Collaborate with cross-functional teams to identify and prioritise features and requirements. Design system prototypes with Figma. Develop and maintain the applications using Vue js, Nuxt js, Next js. Conduct code reviews and provide feedback to improve code quality using Bitbucket and Github. Conduct springplannings and spring reviews with the customer. Collaborate with project managers to manage project progress using Team Work Platform .",
+      "Collaborate with cross-functional teams to identify and prioritise features and requirements. Design system prototypes with Figma. Develop and maintain the applications using Vue js, Nuxt js, Next js. Conduct code reviews and provide feedback to improve code quality using Bitbucket and Github. Conduct spring plannings and spring reviews with the customer. Collaborate with project managers to manage project progress using Team Work Platform .",
   },
   {
     title: "Intern",
@@ -21,7 +21,7 @@ const experience = [
     company: "Hmz Enterprise",
     date: "February 2022 - March 2022",
     description:
-      "Learned the basics of web development. Developed a simple website using HTML, CSS, and JavaScript. Learned how to use Git and Github. Learned how to use Figma to design system prototypes.",
+      "Learned the basics of web development. Developed simple websites using HTML, CSS, and JavaScript. Learned how to use Git and Github. Learned how to use Figma to design system prototypes.",
   },
   {
      title: "Tutor",
