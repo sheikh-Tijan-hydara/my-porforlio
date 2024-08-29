@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from "vue";
+import { ref, onMounted, onBeforeUnmount, mergeProps } from "vue";
 import Card from "primevue/card";
 import Avatar from "primevue/avatar";
 
@@ -75,10 +75,13 @@ onBeforeUnmount(() => {
     <h2 class="lg:text-5xl text-3xl font-bold pb-2 mb-8 text-left">
       Testimonials
     </h2>
-    <Card class="w-full lg:w-2/4 h-auto rounded-lg bg-neutral-800">
+    <Card class="w-full lg:w-2/4 h-auto rounded-lg bg-neutral-800 dark:bg-neutral-800" :pt="{root: {style: {background: '#262626', color: 'white'} ,class: 'bg-neutral-800'}}" :pt-options="{
+      mergeSections: false,
+      mergeProps: false
+    }">
       <template #content>
         <div
-          class="flex flex-col text-center items-center justify-center lg:px-16 py-8"
+          class="flex flex-col text-center items-center justify-center lg:px-16 py-8 "
         >
           <div>
             <Avatar
