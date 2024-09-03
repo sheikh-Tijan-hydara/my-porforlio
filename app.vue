@@ -7,12 +7,22 @@ import Experience from "./src/components/Experience.vue";
 import Projects from "./src/components/Projects.vue";
 import Recommendations from "./src/components/Recommendations.vue";
 import Footer from "./src/components/Footer.vue";
-
 import "primeicons/primeicons.css";
+
+useSeoMeta({
+  title: "Sheikh Tijan Hydara",
+  ogTitle: "Sheikh Tijan Hydara - Software Developer Portfolio",
+  description:
+    "Explore the portfolio of Sheikh Tijan Hydara, a skilled software developer specializing in web and mobile applications. Discover his projects, experience, and technical expertise.",
+  ogDescription:
+    "Explore the portfolio of Sheikh Tijan Hydara, a skilled software developer specializing in web and mobile applications.",
+  ogImage: "/public/me.png",
+  twitterCard: "summary_large_image",
+});
 </script>
 
 <template>
-  <div class="w-full flex flex-col bg-neutral-900 ">
+  <div class="w-full flex flex-col bg-neutral-900">
     <div class="lg:px-24 px-2 pt-2 sticky top-0 z-50 bg-black">
       <NavBar />
     </div>

@@ -22,6 +22,5 @@ export default {
       },
     },
   },
-  darkMode: false,
   plugins: [],
 };
