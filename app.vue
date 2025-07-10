@@ -8,40 +8,53 @@ const handleDownloadResume = () => {
 };
 
 const scrollToSection = (sectionId) => {
-  const element = document.getElementById(sectionId)
+  const element = document.getElementById(sectionId);
   if (element) {
-    element.scrollIntoView({ 
-      behavior: 'smooth',
-      block: 'start'
-    })
+    element.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
   }
-}
+};
 
 const scrollToTop = () => {
   window.scrollTo({
     top: 0,
-    behavior: 'smooth'
-  })
-}
+    behavior: "smooth",
+  });
+};
 
 // SEO Configuration - Centralized and easy to maintain
 const seoData = {
   title: "Sheikh Tijan Hydara",
-  description: "Explore the portfolio of Sheikh Tijan Hydara, a skilled software developer specializing in web and mobile applications. Discover his projects, experience, and technical expertise.",
-  keywords: ["software developer", "web developer", "mobile developer", "frontend developer", "Vue.js", "React", "Nuxt.js", "portfolio", "sheikh tijan Hydara", "Sheikh Tijan Hydara", "Sheikh Tijan"],
+  description:
+    "Explore the portfolio of Sheikh Tijan Hydara, a skilled software developer specializing in web and mobile applications. Discover his projects, experience, and technical expertise.",
+  keywords: [
+    "software developer",
+    "web developer",
+    "mobile developer",
+    "frontend developer",
+    "Vue.js",
+    "React",
+    "Nuxt.js",
+    "portfolio",
+    "sheikh tijan Hydara",
+    "Sheikh Tijan Hydara",
+    "Sheikh Tijan",
+  ],
   author: "Sheikh Tijan Hydara",
   siteName: "Sheikh Tijan Hydara Portfolio",
-  url: "https://sheikhtijan.vercel.app/", 
+  url: "https://sheikhtijan.vercel.app/",
   image: {
     url: "/myPicture1.jpeg",
     alt: "Sheikh Tijan Hydara - Software Developer",
     width: 1200,
-    height: 630
+    height: 630,
   },
   social: {
-    linkedin: "sheikh-tijan-hydara", 
+    linkedin: "sheikh-tijan-hydara",
   },
-  themeColor: "#1e293b"
+  themeColor: "#1e293b",
 };
 
 // Enhanced SEO Meta Setup
@@ -52,10 +65,10 @@ useSeoMeta({
   keywords: seoData.keywords.join(", "),
   author: seoData.author,
   robots: "index, follow",
-  
+
   // Canonical URL
   canonical: seoData.url,
-  
+
   // Open Graph Tags (Facebook, LinkedIn, etc.)
   ogTitle: `${seoData.title} - Sheikh Tijan Hydara`,
   ogDescription: seoData.description,
@@ -67,7 +80,7 @@ useSeoMeta({
   ogUrl: seoData.url,
   ogLocale: "en_US",
   ogSiteName: seoData.siteName,
-  
+
   // Twitter Card Tags
   twitterCard: "summary_large_image",
   twitterTitle: `${seoData.title} - Sheikh Tijan Hydara`,
@@ -76,63 +89,73 @@ useSeoMeta({
   twitterImageAlt: seoData.image.alt,
   twitterSite: seoData.social.twitter,
   twitterCreator: seoData.social.twitter,
-  
+
   // Additional Meta Tags
   themeColor: seoData.themeColor,
   viewport: "width=device-width, initial-scale=1",
   language: "en-US",
-  formatDetection: "telephone=no"
+  formatDetection: "telephone=no",
 });
 
-
 const injectJsonLd = () => {
-  const script = document.createElement('script');
-  script.type = 'application/ld+json';
+  const script = document.createElement("script");
+  script.type = "application/ld+json";
   script.textContent = JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": seoData.title,
-    "jobTitle": "Software Developer",
-    "description": seoData.description,
-    "image": seoData.image.url,
-    "url": seoData.url,
-    "knowsAbout": [
-      "JavaScript", "Vue.js", "React", "Nuxt.js", "C# .NET", 
-      "Flutter", "Frontend Development", "UI/UX Design"
-    ]
+    name: seoData.title,
+    jobTitle: "Software Developer",
+    description: seoData.description,
+    image: seoData.image.url,
+    url: seoData.url,
+    knowsAbout: [
+      "JavaScript",
+      "Vue.js",
+      "React",
+      "Nuxt.js",
+      "C# .NET",
+      "Flutter",
+      "Frontend Development",
+      "UI/UX Design",
+    ],
   });
-  
+
   // Remove existing JSON-LD script if it exists
-  const existingScript = document.querySelector('script[type="application/ld+json"]');
+  const existingScript = document.querySelector(
+    'script[type="application/ld+json"]'
+  );
   if (existingScript) {
     existingScript.remove();
   }
-  
+
   document.head.appendChild(script);
 };
 
 // Additional Head Tags
 useHead({
   htmlAttrs: {
-    lang: "en-US"
+    lang: "en-US",
   },
   meta: [
     { name: "application-name", content: seoData.siteName },
     { name: "apple-mobile-web-app-title", content: seoData.title },
-    { name: "apple-mobile-web-app-capable", content: "yes" }
+    { name: "apple-mobile-web-app-capable", content: "yes" },
   ],
   link: [
     // Favicon
     { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
-    { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
-    
+    {
+      rel: "apple-touch-icon",
+      sizes: "180x180",
+      href: "/apple-touch-icon.png",
+    },
+
     // Performance optimization
     { rel: "preconnect", href: "https://fonts.googleapis.com" },
     { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: "" },
-    { rel: "preload", as: "image", href: seoData.image.url, type: "image/png" }
-  ]
+    { rel: "preload", as: "image", href: seoData.image.url, type: "image/png" },
+  ],
 });
-
 
 const timelineAlign = ref("left");
 
@@ -225,6 +248,15 @@ const testimonials = [
     `,
     name: "Amadu Jallow",
     title: "Backend Developer, Nafa financial services",
+  },
+  {
+    id: 3,
+    avatar: "/sheriff.jpeg",
+    content: `
+     Sheikh Tijan is an outstanding programmer and creative professional who demonstrates remarkable expertise in his field. He possesses genuine enthusiasm for technology and constantly pursues opportunities to enhance his abilities. His collaborative nature and willingness to assist teammates make him an invaluable colleague. Through our partnerships on various assignments, I have been continually impressed by his exceptional output and dedication to excellence.
+    `,
+    name: "Sheriff Gaye",
+    title: "Software Developer, Nafa financial services",
   },
 ];
 
@@ -529,9 +561,9 @@ onBeforeUnmount(() => {
     <section class="relative w-full h-screen overflow-hidden">
       <!-- Animated Background with Parallax Effect -->
       <div
-        class="absolute inset-0 bg-cover bg-center bg-no-repeat transform scale-110 transition-transform duration-[10s] ease-out"
+        class="absolute inset-0 bg-cover bg-center bg-no-repeat transform scale-110 transition-transform duration-[5s] ease-out"
         :style="{
-          backgroundImage: 'url(/background.jpg)',
+          backgroundImage: 'url(/bg.jpg)',
           transform: `scale(1.1) translateY(${scrollY * 0.5}px)`,
         }"
       ></div>
@@ -921,8 +953,6 @@ onBeforeUnmount(() => {
             </div>
           </div>
         </div>
-
-       
       </section>
     </div>
     <section
@@ -2228,7 +2258,7 @@ onBeforeUnmount(() => {
             <h2
               class="lg:text-6xl text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-green-400 to-blue-400 mb-4 animate-fade-in-up"
             >
-              What People Say
+              Testimonials
             </h2>
             <div
               class="w-24 h-1 bg-gradient-to-r from-green-400 to-blue-400 mx-auto rounded-full animate-fade-in-up animation-delay-300"
@@ -2316,20 +2346,6 @@ onBeforeUnmount(() => {
                       </p>
 
                       <!-- Rating Stars -->
-                      <div class="flex justify-center lg:justify-start mt-4">
-                        <div class="flex space-x-1">
-                          <svg
-                            v-for="star in 5"
-                            :key="star"
-                            class="w-5 h-5 text-yellow-400 fill-current animate-star-glow"
-                            :style="{ animationDelay: star * 100 + 'ms' }"
-                          >
-                            <path
-                              d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                            />
-                          </svg>
-                        </div>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -2350,45 +2366,6 @@ onBeforeUnmount(() => {
                 class="w-3 h-3 rounded-full transition-all duration-300 ease-in-out transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-slate-800"
               ></button>
             </div>
-
-            <!-- Navigation Arrows -->
-            <button
-              @click="previousTestimonial"
-              class="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-16 w-12 h-12 bg-slate-800/80 hover:bg-slate-700 rounded-full border border-slate-600 flex items-center justify-center transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-purple-400 group"
-            >
-              <svg
-                class="w-6 h-6 text-gray-400 group-hover:text-white transition-colors"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M15 19l-7-7 7-7"
-                ></path>
-              </svg>
-            </button>
-
-            <button
-              @click="nextTestimonial"
-              class="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-16 w-12 h-12 bg-slate-800/80 hover:bg-slate-700 rounded-full border border-slate-600 flex items-center justify-center transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-purple-400 group"
-            >
-              <svg
-                class="w-6 h-6 text-gray-400 group-hover:text-white transition-colors"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 5l7 7-7 7"
-                ></path>
-              </svg>
-            </button>
           </div>
 
           <!-- Auto-play progress bar -->
@@ -2441,7 +2418,9 @@ onBeforeUnmount(() => {
                 <div
                   class="w-2 h-2 bg-green-500 rounded-full animate-pulse"
                 ></div>
-                <span class="text-lg font-medium">&copy; {{ new Date().getFullYear() }}</span>
+                <span class="text-lg font-medium"
+                  >&copy; {{ new Date().getFullYear() }}</span
+                >
                 <div
                   class="w-2 h-2 bg-blue-500 rounded-full animate-pulse animation-delay-1000"
                 ></div>
@@ -2536,7 +2515,6 @@ onBeforeUnmount(() => {
               <span
                 class="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 px-4 text-sm text-gray-400"
               >
-                
               </span>
             </div>
           </div>
@@ -2640,8 +2618,10 @@ html {
 
 /* Grid background pattern */
 .bg-grid-pattern {
-  background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.1) 1px,
+      transparent 1px
+    ),
     linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
   background-size: 50px 50px;
 }
@@ -2650,25 +2630,46 @@ html {
    KEYFRAME ANIMATIONS
    ====================== */
 @keyframes wave {
-  0%, 60%, 100% { transform: rotate(0deg); }
-  10%, 30% { transform: rotate(14deg); }
-  20% { transform: rotate(-8deg); }
-  40% { transform: rotate(-4deg); }
-  50% { transform: rotate(10deg); }
+  0%,
+  60%,
+  100% {
+    transform: rotate(0deg);
+  }
+  10%,
+  30% {
+    transform: rotate(14deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
 }
 
 @keyframes blob {
-  0%, 100% { transform: translate(0px, 0px) scale(1); }
-  33% { transform: translate(30px, -50px) scale(1.1); }
-  66% { transform: translate(-20px, 20px) scale(0.9); }
+  0%,
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
 }
 
 @keyframes float {
-  0%, 100% { 
+  0%,
+  100% {
     transform: translateY(0) scale(1);
     opacity: 0.3;
   }
-  50% { 
+  50% {
     transform: translateY(-20px) scale(1.2);
     opacity: 0.8;
   }
@@ -2707,16 +2708,23 @@ html {
   }
 }
 
-
-
 @keyframes gradientShift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 @keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 /* ======================
@@ -2752,7 +2760,12 @@ html {
 }
 
 .animate-shimmer {
-  background: linear-gradient(90deg, transparent, rgba(147, 51, 234, 0.5), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(147, 51, 234, 0.5),
+    transparent
+  );
   background-size: 200% 100%;
   animation: shimmer 3s ease-in-out infinite;
 }
@@ -2760,14 +2773,30 @@ html {
 /* ======================
    ANIMATION DELAYS
    ====================== */
-.delay-200 { animation-delay: 200ms; }
-.delay-300 { animation-delay: 300ms; }
-.delay-500 { animation-delay: 500ms; }
-.delay-700 { animation-delay: 700ms; }
-.delay-900 { animation-delay: 900ms; }
-.delay-1000 { animation-delay: 1s; }
-.animation-delay-2000 { animation-delay: 2s; }
-.animation-delay-4000 { animation-delay: 4s; }
+.delay-200 {
+  animation-delay: 200ms;
+}
+.delay-300 {
+  animation-delay: 300ms;
+}
+.delay-500 {
+  animation-delay: 500ms;
+}
+.delay-700 {
+  animation-delay: 700ms;
+}
+.delay-900 {
+  animation-delay: 900ms;
+}
+.delay-1000 {
+  animation-delay: 1s;
+}
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
 
 /* ======================
    PROJECT CARDS
@@ -2777,12 +2806,24 @@ html {
   opacity: 0;
 }
 
-.project-card:nth-child(1) { animation-delay: 0.1s; }
-.project-card:nth-child(2) { animation-delay: 0.2s; }
-.project-card:nth-child(3) { animation-delay: 0.3s; }
-.project-card:nth-child(4) { animation-delay: 0.4s; }
-.project-card:nth-child(5) { animation-delay: 0.5s; }
-.project-card:nth-child(6) { animation-delay: 0.6s; }
+.project-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.project-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.project-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.project-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.project-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.project-card:nth-child(6) {
+  animation-delay: 0.6s;
+}
 
 /* ======================
    RESPONSIVE DESIGN
@@ -2791,7 +2832,7 @@ html {
   ::v-deep(.customized-timeline) {
     .p-timeline-event:nth-child(even) {
       flex-direction: row;
-      
+
       .p-timeline-event-content {
         text-align: left;
       }
