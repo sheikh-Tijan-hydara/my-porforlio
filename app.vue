@@ -84,20 +84,32 @@ useSeoMeta({
   formatDetection: "telephone=no"
 });
 
-// Structured Data for better search engine understanding
-useJsonld(() => ({
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": seoData.title,
-  "jobTitle": "Software Developer",
-  "description": seoData.description,
-  "image": seoData.image.url,
-  "url": seoData.url,
-  "knowsAbout": [
-    "JavaScript", "Vue.js", "React", "Nuxt.js", "C# .NET", 
-    "Flutter", "Frontend Development", "UI/UX Design"
-  ]
-}));
+
+const injectJsonLd = () => {
+  const script = document.createElement('script');
+  script.type = 'application/ld+json';
+  script.textContent = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": seoData.title,
+    "jobTitle": "Software Developer",
+    "description": seoData.description,
+    "image": seoData.image.url,
+    "url": seoData.url,
+    "knowsAbout": [
+      "JavaScript", "Vue.js", "React", "Nuxt.js", "C# .NET", 
+      "Flutter", "Frontend Development", "UI/UX Design"
+    ]
+  });
+  
+  // Remove existing JSON-LD script if it exists
+  const existingScript = document.querySelector('script[type="application/ld+json"]');
+  if (existingScript) {
+    existingScript.remove();
+  }
+  
+  document.head.appendChild(script);
+};
 
 // Additional Head Tags
 useHead({
