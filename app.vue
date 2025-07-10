@@ -325,10 +325,20 @@ const techStack = [
 ];
 
 const skills = [
-  { name: "Frontend Development", level: 95 },
-  { name: "Backend Development", level: 50 },
   { name: "UI/UX Design", level: 95 },
   { name: "DevOps & Deployment", level: 50 },
+  { name: "Project Management", level: 100 },
+  { name: "JavaScript/TypeScript", level: 90 },
+  { name: "React/Next.js", level: 90 },
+  { name: "HTML/CSS", level: 95 },
+  { name: "C# .Net", level: 60 },
+  { name: "Database Design", level: 55 },
+  { name: "Version Control (Git)", level: 85 },
+  { name: "Responsive Design", level: 90 },
+  { name: "Performance Optimization", level: 75 },
+  { name: "Testing & Debugging", level: 80 },
+  { name: "Agile Methodologies", level: 90 },
+  { name: "Mobile Development", level: 70 },
 ];
 
 onMounted(() => {
@@ -872,24 +882,18 @@ onBeforeUnmount(() => {
                 <h3 class="text-xl font-semibold text-white mb-6">
                   Core Expertise
                 </h3>
-                <div
-                  v-for="skill in skills"
-                  :key="skill.name"
-                  class="space-y-2"
-                >
-                  <div class="flex justify-between items-center">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  <div
+                    v-for="skill in skills"
+                    :key="skill.name"
+                    class="flex items-center space-x-3 p-3 rounded-lg bg-gray-800/50 border border-gray-700/50 hover:border-green-500/30 transition-all duration-300"
+                  >
+                    <div
+                      class="w-2 h-2 bg-gradient-to-r from-green-400 to-blue-400 rounded-full"
+                    ></div>
                     <span class="text-gray-300 font-medium">{{
                       skill.name
                     }}</span>
-                    <span class="text-green-400 text-sm"
-                      >{{ skill.level }}%</span
-                    >
-                  </div>
-                  <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
-                    <div
-                      class="h-full bg-gradient-to-r from-green-400 to-blue-400 rounded-full transition-all duration-1000 ease-out"
-                      :style="{ width: isVisible ? skill.level + '%' : '0%' }"
-                    ></div>
                   </div>
                 </div>
               </div>
