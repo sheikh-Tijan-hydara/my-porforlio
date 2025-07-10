@@ -429,9 +429,9 @@ onBeforeUnmount(() => {
     <section class="relative w-full h-screen overflow-hidden">
       <!-- Animated Background with Parallax Effect -->
       <div
-        class="absolute inset-0 bg-cover bg-center bg-no-repeat transform scale-110 transition-transform duration-[20s] ease-out"
+        class="absolute inset-0 bg-cover bg-center bg-no-repeat transform scale-110 transition-transform duration-[10s] ease-out"
         :style="{
-          backgroundImage: 'url(/me.png)',
+          backgroundImage: 'url(/background.jpg)',
           transform: `scale(1.1) translateY(${scrollY * 0.5}px)`,
         }"
       ></div>
@@ -2128,7 +2128,7 @@ onBeforeUnmount(() => {
             <h2
               class="lg:text-6xl text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-green-400 to-blue-400 mb-4 animate-fade-in-up"
             >
-              What Our Clients Say
+              What People Say
             </h2>
             <div
               class="w-24 h-1 bg-gradient-to-r from-green-400 to-blue-400 mx-auto rounded-full animate-fade-in-up animation-delay-300"
