@@ -23,16 +23,104 @@ const scrollToTop = () => {
     behavior: 'smooth'
   })
 }
-useSeoMeta({
+
+// SEO Configuration - Centralized and easy to maintain
+const seoData = {
   title: "Sheikh Tijan Hydara",
-  ogTitle: "Sheikh Tijan Hydara - Software Developer Portfolio",
-  description:
-    "Explore the portfolio of Sheikh Tijan Hydara, a skilled software developer specializing in web and mobile applications. Discover his projects, experience, and technical expertise.",
-  ogDescription:
-    "Explore the portfolio of Sheikh Tijan Hydara, a skilled software developer specializing in web and mobile applications.",
-  ogImage: "/public/me.png",
+  description: "Explore the portfolio of Sheikh Tijan Hydara, a skilled software developer specializing in web and mobile applications. Discover his projects, experience, and technical expertise.",
+  keywords: ["software developer", "web developer", "mobile developer", "frontend developer", "Vue.js", "React", "Nuxt.js", "portfolio", "sheikh tijan Hydara", "Sheikh Tijan Hydara", "Sheikh Tijan"],
+  author: "Sheikh Tijan Hydara",
+  siteName: "Sheikh Tijan Hydara Portfolio",
+  url: "https://sheikhtijan.vercel.app/", 
+  image: {
+    url: "/myPicture1.jpeg",
+    alt: "Sheikh Tijan Hydara - Software Developer",
+    width: 1200,
+    height: 630
+  },
+  social: {
+    linkedin: "sheikh-tijan-hydara", 
+  },
+  themeColor: "#1e293b"
+};
+
+// Enhanced SEO Meta Setup
+useSeoMeta({
+  // Basic Meta Tags
+  title: seoData.title,
+  description: seoData.description,
+  keywords: seoData.keywords.join(", "),
+  author: seoData.author,
+  robots: "index, follow",
+  
+  // Canonical URL
+  canonical: seoData.url,
+  
+  // Open Graph Tags (Facebook, LinkedIn, etc.)
+  ogTitle: `${seoData.title} - Sheikh Tijan Hydara`,
+  ogDescription: seoData.description,
+  ogImage: seoData.image.url,
+  ogImageAlt: seoData.image.alt,
+  ogImageWidth: seoData.image.width,
+  ogImageHeight: seoData.image.height,
+  ogType: "website",
+  ogUrl: seoData.url,
+  ogLocale: "en_US",
+  ogSiteName: seoData.siteName,
+  
+  // Twitter Card Tags
   twitterCard: "summary_large_image",
+  twitterTitle: `${seoData.title} - Sheikh Tijan Hydara`,
+  twitterDescription: seoData.description,
+  twitterImage: seoData.image.url,
+  twitterImageAlt: seoData.image.alt,
+  twitterSite: seoData.social.twitter,
+  twitterCreator: seoData.social.twitter,
+  
+  // Additional Meta Tags
+  themeColor: seoData.themeColor,
+  viewport: "width=device-width, initial-scale=1",
+  language: "en-US",
+  formatDetection: "telephone=no"
 });
+
+// Structured Data for better search engine understanding
+useJsonld(() => ({
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": seoData.title,
+  "jobTitle": "Software Developer",
+  "description": seoData.description,
+  "image": seoData.image.url,
+  "url": seoData.url,
+  "knowsAbout": [
+    "JavaScript", "Vue.js", "React", "Nuxt.js", "C# .NET", 
+    "Flutter", "Frontend Development", "UI/UX Design"
+  ]
+}));
+
+// Additional Head Tags
+useHead({
+  htmlAttrs: {
+    lang: "en-US"
+  },
+  meta: [
+    { name: "application-name", content: seoData.siteName },
+    { name: "apple-mobile-web-app-title", content: seoData.title },
+    { name: "apple-mobile-web-app-capable", content: "yes" }
+  ],
+  link: [
+    // Favicon
+    { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+    { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
+    
+    // Performance optimization
+    { rel: "preconnect", href: "https://fonts.googleapis.com" },
+    { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: "" },
+    { rel: "preload", as: "image", href: seoData.image.url, type: "image/png" }
+  ]
+});
+
 
 const timelineAlign = ref("left");
 
