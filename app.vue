@@ -197,8 +197,10 @@ const startAutoPlay = () => {
     nextTestimonial();
   }, 5000);
 };
-const closeMobileMenu = () => {
+const closeMobileMenu = (sectionId) => {
   mobileMenuOpen.value = false;
+  scrollToSection(sectionId)
+
 };
 const updateTimelineAlign = () => {
   if (window.innerWidth >= 1024) {
@@ -316,23 +318,17 @@ const techStack = [
     color: "#3776AB",
     bgColor: "bg-blue-500/10",
   },
-  {
-    name: "Database",
-    icon: "pi pi-database",
-    color: "#336791",
-    bgColor: "bg-indigo-400/10",
-  },
 ];
 
 const skills = [
   { name: "UI/UX Design", level: 95 },
-  { name: "DevOps & Deployment", level: 50 },
+  { name: "Vue/Nuxt.js", level: 50 },
   { name: "Project Management", level: 100 },
   { name: "JavaScript/TypeScript", level: 90 },
   { name: "React/Next.js", level: 90 },
   { name: "HTML/CSS", level: 95 },
   { name: "C# .Net", level: 60 },
-  { name: "Database Design", level: 55 },
+  { name: "Graphql Client", level: 55 },
   { name: "Version Control (Git)", level: 85 },
   { name: "Responsive Design", level: 90 },
   { name: "Performance Optimization", level: 75 },
@@ -511,7 +507,7 @@ onBeforeUnmount(() => {
             <nav class="space-y-6">
               <NuxtLink
                 to="#about"
-                @click="closeMobileMenu"
+                @click="closeMobileMenu('about')"
                 class="block text-white font-semibold text-xl tracking-wide hover:text-green-400 transition-colors duration-300 py-2 border-b border-gray-800 hover:border-green-400"
               >
                 ABOUT ME
@@ -519,7 +515,7 @@ onBeforeUnmount(() => {
 
               <NuxtLink
                 to="#experience"
-                @click="closeMobileMenu"
+                @click="closeMobileMenu('experience')"
                 class="block text-white font-semibold text-xl tracking-wide hover:text-green-400 transition-colors duration-300 py-2 border-b border-gray-800 hover:border-green-400"
               >
                 EXPERIENCE
@@ -527,7 +523,7 @@ onBeforeUnmount(() => {
 
               <NuxtLink
                 to="#projects"
-                @click="closeMobileMenu"
+                @click="closeMobileMenu('projects')"
                 class="block text-white font-semibold text-xl tracking-wide hover:text-green-400 transition-colors duration-300 py-2 border-b border-gray-800 hover:border-green-400"
               >
                 PROJECTS
@@ -860,7 +856,7 @@ onBeforeUnmount(() => {
                   >
                   who transforms ideas into reality through code. I specialize
                   in building scalable, efficient applications with expertise in
-                  both front-end and back-end development.
+                  front-end and UX/UI design.
                 </p>
 
                 <p class="text-lg text-gray-400 leading-relaxed">
@@ -964,7 +960,7 @@ onBeforeUnmount(() => {
     >
       <div class="container mx-auto px-6 lg:px-8">
         <!-- Header -->
-        <div class="text-center mb-20">
+        <div class="text-center mb-16">
           <h1 class="text-5xl lg:text-7xl font-bold text-white mb-6">
             My
             <span
@@ -978,276 +974,318 @@ onBeforeUnmount(() => {
           </p>
         </div>
 
-        <!-- Education Cards -->
-        <div
-          class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20"
-        >
-          <div class="group">
-            <div
-              class="bg-white/10 backdrop-blur-lg rounded-3xl p-10 shadow-2xl border border-white/20 hover:bg-white/15 hover:border-emerald-400/50 transition-all duration-500 h-full"
-            >
-              <div class="flex items-center mb-6">
+        <!-- Education Timeline -->
+        <div class="max-w-7xl mx-auto mb-16">
+          <!-- Main Academic Education -->
+          <div class="mb-12">
+            <h2 class="text-2xl font-bold text-white mb-8 text-center">
+              Academic Foundation
+            </h2>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              <!-- Secondary School -->
+              <div class="group">
                 <div
-                  class="w-20 h-20 bg-gradient-to-br from-emerald-500 to-cyan-500 rounded-2xl flex items-center justify-center mr-6 group-hover:scale-110 transition-transform duration-300"
+                  class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/20 hover:bg-white/15 hover:border-emerald-400/50 transition-all duration-500 h-full"
                 >
-                  <Icon
-                    name="ph:graduation-cap-bold"
-                    class="text-3xl text-white"
-                  />
-                </div>
-                <div>
-                  <h3 class="text-3xl font-bold text-white mb-2">
-                    Senior Secondary School Certificate
-                  </h3>
-                </div>
-              </div>
+                  <div class="flex items-center mb-4">
+                    <div
+                      class="w-12 h-12 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-full flex items-center justify-center mr-4"
+                    >
+                      <Icon
+                        name="ph:graduation-cap-bold"
+                        class="text-2xl text-white"
+                      />
+                    </div>
+                    <div>
+                      <h3 class="text-xl font-bold text-white">
+                        Secondary School
+                      </h3>
+                      <p class="text-emerald-300 text-sm">2016 - 2019</p>
+                    </div>
+                  </div>
 
-              <div class="space-y-4">
-                <div class="flex items-center space-x-3 text-gray-300">
-                  <Icon
-                    name="ph:building-bold"
-                    class="text-lg text-emerald-400"
-                  />
-                  <span class="text-lg">Farafenni Senior Secondary School</span>
-                </div>
-                <div class="flex items-center space-x-3 text-gray-300">
-                  <Icon
-                    name="ph:calendar-bold"
-                    class="text-lg text-emerald-400"
-                  />
-                  <span class="text-lg">2016 - 2019</span>
-                </div>
-              </div>
+                  <div class="space-y-3 mb-4">
+                    <div class="flex items-center space-x-2 text-gray-300">
+                      <Icon
+                        name="ph:building-bold"
+                        class="text-sm text-emerald-400"
+                      />
+                      <span class="text-sm"
+                        >Farafenni Senior Secondary School</span
+                      >
+                    </div>
+                  </div>
 
-              <p class="text-gray-300 leading-relaxed mt-6 mb-6">
-                Completed secondary education with a focus on science and
-                mathematics. Developed foundational skills in problem-solving,
-                critical thinking, and analytical reasoning.
-              </p>
-            </div>
-          </div>
-          <div class="group">
-            <div
-              class="bg-white/10 backdrop-blur-lg rounded-3xl p-10 shadow-2xl border border-white/20 hover:bg-white/15 hover:border-emerald-400/50 transition-all duration-500 h-full"
-            >
-              <div class="flex items-center mb-6">
-                <div
-                  class="w-20 h-20 bg-gradient-to-br from-emerald-500 to-cyan-500 rounded-2xl flex items-center justify-center mr-6 group-hover:scale-110 transition-transform duration-300"
-                >
-                  <Icon
-                    name="ph:graduation-cap-bold"
-                    class="text-3xl text-white"
-                  />
-                </div>
-                <div>
-                  <h3 class="text-3xl font-bold text-white mb-2">
-                    Fundamentals Of Web Development
-                  </h3>
-                  <p class="text-emerald-300 text-lg">Free Code Camp</p>
-                </div>
-              </div>
-
-              <div class="space-y-4">
-                <div class="flex items-center space-x-3 text-gray-300">
-                  <Icon
-                    name="ph:building-bold"
-                    class="text-lg text-emerald-400"
-                  />
-                  <span class="text-lg">Self Thought</span>
-                </div>
-              </div>
-
-              <p class="text-gray-300 leading-relaxed mt-6 mb-6">
-                Comprehensive course covering HTML, CSS, JavaScript, and modern
-                web development practices. Focused on building responsive,
-                accessible, and user-friendly web applications.
-              </p>
-
-              <div class="flex flex-wrap gap-3">
-                <span
-                  class="px-4 py-2 bg-emerald-500/20 text-emerald-300 rounded-full text-sm font-medium"
-                  >HTML</span
-                >
-                <span
-                  class="px-4 py-2 bg-emerald-500/20 text-emerald-300 rounded-full text-sm font-medium"
-                  >CSS</span
-                >
-                <span
-                  class="px-4 py-2 bg-emerald-500/20 text-emerald-300 rounded-full text-sm font-medium"
-                  >JavaScript</span
-                >
-              </div>
-            </div>
-          </div>
-          <!-- Bachelor's Degree -->
-          <div class="group">
-            <div
-              class="bg-white/10 backdrop-blur-lg rounded-3xl p-10 shadow-2xl border border-white/20 hover:bg-white/15 hover:border-emerald-400/50 transition-all duration-500 h-full"
-            >
-              <div class="flex items-center mb-6">
-                <div
-                  class="w-20 h-20 bg-gradient-to-br from-emerald-500 to-cyan-500 rounded-2xl flex items-center justify-center mr-6 group-hover:scale-110 transition-transform duration-300"
-                >
-                  <Icon
-                    name="ph:graduation-cap-bold"
-                    class="text-3xl text-white"
-                  />
-                </div>
-                <div>
-                  <h3 class="text-3xl font-bold text-white mb-2">
-                    Bachelor's Degree
-                  </h3>
-                  <p class="text-emerald-300 text-lg">
-                    Bachelor's Of Science In Computer Science
+                  <p class="text-gray-300 text-sm leading-relaxed">
+                    Completed secondary education with focus on science and
+                    mathematics. Developed foundational problem-solving and
+                    analytical skills.
                   </p>
                 </div>
               </div>
 
-              <div class="space-y-4">
-                <div class="flex items-center space-x-3 text-gray-300">
-                  <Icon
-                    name="ph:building-bold"
-                    class="text-lg text-emerald-400"
-                  />
-                  <span class="text-lg">University of The Gambia</span>
-                </div>
-                <div class="flex items-center space-x-3 text-gray-300">
-                  <Icon
-                    name="ph:calendar-bold"
-                    class="text-lg text-emerald-400"
-                  />
-                  <span class="text-lg">2019 - 2024</span>
-                </div>
-              </div>
-
-              <p class="text-gray-300 leading-relaxed mt-6 mb-6">
-                Comprehensive program covering core computer science principles,
-                software development, and advanced programming techniques.
-                Emphasized practical skills through projects and collaborative
-                learning.
-              </p>
-
-              <div class="flex flex-wrap gap-3">
-                <span
-                  class="px-4 py-2 bg-emerald-500/20 text-emerald-300 rounded-full text-sm font-medium"
-                  >Programming</span
-                >
-                <span
-                  class="px-4 py-2 bg-emerald-500/20 text-emerald-300 rounded-full text-sm font-medium"
-                  >Data Structures</span
-                >
-                <span
-                  class="px-4 py-2 bg-emerald-500/20 text-emerald-300 rounded-full text-sm font-medium"
-                  >Algorithms</span
-                >
-                <span
-                  class="px-4 py-2 bg-emerald-500/20 text-emerald-300 rounded-full text-sm font-medium"
-                  >Software Engineering</span
-                >
-              </div>
-            </div>
-          </div>
-
-          <!-- Exchange Program -->
-          <div class="group">
-            <div
-              class="bg-white/10 backdrop-blur-lg rounded-3xl p-10 shadow-2xl border border-white/20 hover:bg-white/15 hover:border-cyan-400/50 transition-all duration-500 h-full"
-            >
-              <div class="flex items-center mb-6">
+              <!-- Bachelor's Degree -->
+              <div class="group">
                 <div
-                  class="w-20 h-20 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-2xl flex items-center justify-center mr-6 group-hover:scale-110 transition-transform duration-300"
+                  class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/20 hover:bg-white/15 hover:border-emerald-400/50 transition-all duration-500 h-full"
                 >
-                  <Icon name="ph:airplane-bold" class="text-3xl text-white" />
-                </div>
-                <div>
-                  <h3 class="text-3xl font-bold text-white mb-2">
-                    Exchange Program
-                  </h3>
-                  <p class="text-cyan-300 text-lg">Erasmus Student Exchange</p>
+                  <div class="flex items-center mb-4">
+                    <div
+                      class="w-12 h-12 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-full flex items-center justify-center mr-4"
+                    >
+                      <Icon
+                        name="ph:student-bold"
+                        class="text-2xl text-white"
+                      />
+                    </div>
+                    <div>
+                      <h3 class="text-xl font-bold text-white">
+                        Bachelor's Degree
+                      </h3>
+                      <p class="text-emerald-300 text-sm">2019 - 2024</p>
+                    </div>
+                  </div>
+
+                  <div class="space-y-3 mb-4">
+                    <div class="flex items-center space-x-2 text-gray-300">
+                      <Icon
+                        name="ph:building-bold"
+                        class="text-sm text-emerald-400"
+                      />
+                      <span class="text-sm">University of The Gambia</span>
+                    </div>
+                    <div class="text-cyan-300 text-sm font-medium">
+                      BSc Computer Science
+                    </div>
+                  </div>
+
+                  <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                    Comprehensive program covering core CS principles, software
+                    development, and advanced programming techniques.
+                  </p>
+
+                  <div class="flex flex-wrap gap-2">
+                    <span
+                      class="px-3 py-1 bg-emerald-500/20 text-emerald-300 rounded-full text-xs"
+                      >Programming</span
+                    >
+                    <span
+                      class="px-3 py-1 bg-emerald-500/20 text-emerald-300 rounded-full text-xs"
+                      >Data Structures</span
+                    >
+                    <span
+                      class="px-3 py-1 bg-emerald-500/20 text-emerald-300 rounded-full text-xs"
+                      >Algorithms</span
+                    >
+                  </div>
                 </div>
               </div>
 
-              <div class="space-y-4">
-                <div class="flex items-center space-x-3 text-gray-300">
-                  <Icon name="ph:building-bold" class="text-lg text-cyan-400" />
-                  <span class="text-lg">Universidad de Jaén, Spain</span>
+              <!-- Exchange Program -->
+              <div class="group">
+                <div
+                  class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/20 hover:bg-white/15 hover:border-cyan-400/50 transition-all duration-500 h-full"
+                >
+                  <div class="flex items-center mb-4">
+                    <div
+                      class="w-12 h-12 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full flex items-center justify-center mr-4"
+                    >
+                      <Icon
+                        name="ph:airplane-bold"
+                        class="text-2xl text-white"
+                      />
+                    </div>
+                    <div>
+                      <h3 class="text-xl font-bold text-white">
+                        Exchange Program
+                      </h3>
+                      <p class="text-cyan-300 text-sm">2023 - 2024</p>
+                    </div>
+                  </div>
+
+                  <div class="space-y-3 mb-4">
+                    <div class="flex items-center space-x-2 text-gray-300">
+                      <Icon
+                        name="ph:building-bold"
+                        class="text-sm text-cyan-400"
+                      />
+                      <span class="text-sm">Universidad de Jaén, Spain</span>
+                    </div>
+                    <div class="text-cyan-300 text-sm font-medium">
+                      Erasmus Student Exchange
+                    </div>
+                  </div>
+
+                  <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                    International exchange program enhancing cultural
+                    understanding and technical skills through diverse
+                    educational environments.
+                  </p>
+
+                  <div class="flex flex-wrap gap-2">
+                    <span
+                      class="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-xs"
+                      >Cultural Exchange</span
+                    >
+                    <span
+                      class="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-xs"
+                      >Spanish Language</span
+                    >
+                  </div>
                 </div>
-                <div class="flex items-center space-x-3 text-gray-300">
-                  <Icon name="ph:calendar-bold" class="text-lg text-cyan-400" />
-                  <span class="text-lg">2023 - 2024</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Professional Development -->
+          <div class="mb-12">
+            <h2 class="text-2xl font-bold text-white mb-8 text-center">
+              Professional Development
+            </h2>
+            <div
+              class="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-4xl mx-auto"
+            >
+              <!-- Web Development Course -->
+              <div class="group">
+                <div
+                  class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/20 hover:bg-white/15 hover:border-purple-400/50 transition-all duration-500 h-full"
+                >
+                  <div class="flex items-center mb-4">
+                    <div
+                      class="w-12 h-12 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full flex items-center justify-center mr-4"
+                    >
+                      <Icon name="ph:code-bold" class="text-2xl text-white" />
+                    </div>
+                    <div>
+                      <h3 class="text-xl font-bold text-white">
+                        Web Development
+                      </h3>
+                      <p class="text-purple-300 text-sm">Free Code Camp</p>
+                    </div>
+                  </div>
+
+                  <div class="space-y-3 mb-4">
+                    <div class="flex items-center space-x-2 text-gray-300">
+                      <Icon
+                        name="ph:computer-tower-bold"
+                        class="text-sm text-purple-400"
+                      />
+                      <span class="text-sm">Self-Taught</span>
+                    </div>
+                  </div>
+
+                  <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                    Comprehensive course covering HTML, CSS, JavaScript, and
+                    modern web development practices for responsive
+                    applications.
+                  </p>
+
+                  <div class="flex flex-wrap gap-2">
+                    <span
+                      class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs"
+                      >HTML</span
+                    >
+                    <span
+                      class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs"
+                      >CSS</span
+                    >
+                    <span
+                      class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs"
+                      >JavaScript</span
+                    >
+                  </div>
                 </div>
               </div>
 
-              <p class="text-gray-300 leading-relaxed mt-6 mb-6">
-                Participated in an international exchange program, enhancing my
-                cultural understanding and technical skills through exposure to
-                diverse educational environments and collaborative projects with
-                peers from different backgrounds.
-              </p>
+              <!-- UNESCO Hackathon -->
+              <div class="group">
+                <div
+                  class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/20 hover:bg-white/15 hover:border-orange-400/50 transition-all duration-500 h-full"
+                >
+                  <div class="flex items-center mb-4">
+                    <div
+                      class="w-12 h-12 bg-gradient-to-r from-orange-400 to-red-400 rounded-full flex items-center justify-center mr-4"
+                    >
+                      <Icon name="ph:trophy-bold" class="text-2xl text-white" />
+                    </div>
+                    <div>
+                      <h3 class="text-xl font-bold text-white">
+                        UNESCO Hackathon
+                      </h3>
+                      <p class="text-orange-300 text-sm">November 2022</p>
+                    </div>
+                  </div>
 
-              <div class="flex flex-wrap gap-3">
-                <span
-                  class="px-4 py-2 bg-cyan-500/20 text-cyan-300 rounded-full text-sm font-medium"
-                  >Cultural Exchange</span
-                >
-                <span
-                  class="px-4 py-2 bg-cyan-500/20 text-cyan-300 rounded-full text-sm font-medium"
-                  >International Experience</span
-                >
-                <span
-                  class="px-4 py-2 bg-cyan-500/20 text-cyan-300 rounded-full text-sm font-medium"
-                  >Spanish Language</span
-                >
-                <span
-                  class="px-4 py-2 bg-cyan-500/20 text-cyan-300 rounded-full text-sm font-medium"
-                  >Global Perspective</span
-                >
+                  <div class="space-y-3 mb-4">
+                    <div class="flex items-center space-x-2 text-gray-300">
+                      <Icon
+                        name="ph:map-pin-bold"
+                        class="text-sm text-orange-400"
+                      />
+                      <span class="text-sm">India</span>
+                    </div>
+                    <div class="text-orange-300 text-sm font-medium">
+                      Finalist - UNESCO India Africa Hackathon
+                    </div>
+                  </div>
+
+                  <p class="text-gray-300 text-sm leading-relaxed">
+                    36-hour intensive competition designing innovative solutions
+                    to real-world challenges faced by communities in India and
+                    Africa.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Statistics Section -->
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+          <!-- Statistics Section -->
           <div
-            class="text-center bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/15 hover:border-emerald-400/50 transition-all duration-300"
+            class="bg-white/5 backdrop-blur-lg rounded-3xl p-8 border border-white/10"
           >
-            <div
-              class="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 mb-3"
-            >
-              16
+            <h2 class="text-2xl font-bold text-white mb-8 text-center">
+              Journey Overview
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <div class="text-center">
+                <div
+                  class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 mb-2"
+                >
+                  16
+                </div>
+                <div class="text-gray-300 text-sm font-medium">
+                  Years of Study
+                </div>
+              </div>
+              <div class="text-center">
+                <div
+                  class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400 mb-2"
+                >
+                  3
+                </div>
+                <div class="text-gray-300 text-sm font-medium">Countries</div>
+              </div>
+              <div class="text-center">
+                <div
+                  class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-2"
+                >
+                  1
+                </div>
+                <div class="text-gray-300 text-sm font-medium">
+                  Degree Earned
+                </div>
+              </div>
+              <div class="text-center">
+                <div
+                  class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400 mb-2"
+                >
+                  ∞
+                </div>
+                <div class="text-gray-300 text-sm font-medium">
+                  Learning Journey
+                </div>
+              </div>
             </div>
-            <div class="text-gray-300 font-medium">Years of Study</div>
-          </div>
-          <div
-            class="text-center bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/15 hover:border-cyan-400/50 transition-all duration-300"
-          >
-            <div
-              class="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400 mb-3"
-            >
-              2
-            </div>
-            <div class="text-gray-300 font-medium">Countries</div>
-          </div>
-          <div
-            class="text-center bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/15 hover:border-purple-400/50 transition-all duration-300"
-          >
-            <div
-              class="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-3"
-            >
-              1
-            </div>
-            <div class="text-gray-300 font-medium">Degree Earned</div>
-          </div>
-          <div
-            class="text-center bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/15 hover:border-indigo-400/50 transition-all duration-300"
-          >
-            <div
-              class="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400 mb-3"
-            >
-              ∞
-            </div>
-            <div class="text-gray-300 font-medium">Learning Journey</div>
           </div>
         </div>
       </div>
@@ -1432,7 +1470,7 @@ onBeforeUnmount(() => {
                         >
                         <span
                           class="px-4 py-2 bg-cyan-500/20 text-cyan-300 rounded-full text-sm font-medium"
-                          >Node.js</span
+                          >Primevue </span
                         >
                         <span
                           class="px-4 py-2 bg-cyan-500/20 text-cyan-300 rounded-full text-sm font-medium"
