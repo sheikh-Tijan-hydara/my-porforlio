@@ -199,8 +199,7 @@ const startAutoPlay = () => {
 };
 const closeMobileMenu = (sectionId) => {
   mobileMenuOpen.value = false;
-  scrollToSection(sectionId)
-
+  scrollToSection(sectionId);
 };
 const updateTimelineAlign = () => {
   if (window.innerWidth >= 1024) {
@@ -209,6 +208,93 @@ const updateTimelineAlign = () => {
     timelineAlign.value = "left";
   }
 };
+
+const educationData = [
+  {
+    title: "Secondary School",
+    period: "2016 - 2019",
+    institution: "Farafenni Senior Secondary School",
+    degree: null,
+    description:
+      "Completed secondary education with focus on science and mathematics. Developed foundational problem-solving and analytical skills.",
+    icon: "ph:graduation-cap-bold",
+    iconBgClass: "bg-gradient-to-r from-emerald-400 to-cyan-400",
+    hoverBorderClass: "hover:border-emerald-400/50",
+    buildingIconClass: "text-emerald-400",
+    tagClass: "bg-emerald-500/20 text-emerald-300",
+    tags: [],
+    image: "/fsss.png",
+  },
+  {
+    title: "Bachelor's Degree",
+    period: "2019 - 2024",
+    institution: "University of The Gambia",
+    degree: "BSc Computer Science",
+    description:
+      "Comprehensive program covering core CS principles, software development, and advanced programming techniques.",
+    icon: "ph:student-bold",
+    iconBgClass: "bg-gradient-to-r from-emerald-400 to-cyan-400",
+    hoverBorderClass: "hover:border-emerald-400/50",
+    buildingIconClass: "text-emerald-400",
+    tagClass: "bg-emerald-500/20 text-emerald-300",
+    tags: ["Programming", "Data Structures", "Algorithms"],
+    image: "/utg.png",
+  },
+  {
+    title: "Exchange Program",
+    period: "2023 - 2024",
+    institution: "Universidad de Jaén, Spain",
+    degree: "Erasmus Student Exchange",
+    description:
+      "International exchange program enhancing cultural understanding and technical skills through diverse educational environments.",
+    icon: "ph:airplane-bold",
+    iconBgClass: "bg-gradient-to-r from-cyan-400 to-blue-400",
+    hoverBorderClass: "hover:border-cyan-400/50",
+    buildingIconClass: "text-cyan-400",
+    tagClass: "bg-cyan-500/20 text-cyan-300",
+    tags: ["Cultural Exchange", "Spanish Language"],
+    image: "/jaen.png",
+  },
+];
+
+const certificationsData = [
+  {
+    id: 1,
+    title: "Web Development",
+    period: "Free Code Camp",
+    location: "Self-Taught",
+    achievement: null,
+    description:
+      "Comprehensive course covering HTML, CSS, JavaScript, and modern web development practices for responsive applications.",
+    image: "/free.jpeg",
+    iconBgClass: "bg-gradient-to-r from-purple-400 to-pink-400",
+    dateColorClass: "text-purple-300",
+    locationIcon: "ph:computer-tower-bold",
+    locationIconClass: "text-purple-400",
+    achievementColorClass: null,
+    hoverBorderClass: "hover:border-purple-400/50",
+    tags: ["HTML", "CSS", "JavaScript"],
+    tagClass: "bg-purple-500/20 text-purple-300",
+  },
+  {
+    id: 2,
+    title: "UNESCO Hackathon",
+    period: "November 2022",
+    location: "India",
+    achievement: "Finalist - UNESCO India Africa Hackathon",
+    description:
+      "36-hour intensive competition designing innovative solutions to real-world challenges faced by communities in India and Africa.",
+    image: "/india.png",
+    iconBgClass: "bg-gradient-to-r from-orange-400 to-red-400",
+    dateColorClass: "text-orange-300",
+    locationIcon: "ph:map-pin-bold",
+    locationIconClass: "text-orange-400",
+    achievementColorClass: "text-orange-300",
+    hoverBorderClass: "hover:border-orange-400/50",
+    tags: null,
+    tagClass: null,
+  },
+];
 
 const testimonials = [
   {
@@ -680,7 +766,7 @@ onBeforeUnmount(() => {
                 >imagine</span
               >
               <span class="inline-block ml-4" style="animation-delay: 1s"
-                >it</span
+                >it,</span
               >
               <br />
               <span
@@ -726,7 +812,7 @@ onBeforeUnmount(() => {
             </button>
 
             <a
-              href="https://www.linkedin.com/in/sheikh-tijan-hydara-60602621a/"
+              href="https://www.linkedin.com/in/sheikh-tijan-hydara/"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -982,25 +1068,32 @@ onBeforeUnmount(() => {
               Academic Foundation
             </h2>
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-              <!-- Secondary School -->
-              <div class="group">
+              <div
+                v-for="education in educationData"
+                :key="education.id"
+                class="group"
+              >
                 <div
-                  class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/20 hover:bg-white/15 hover:border-emerald-400/50 transition-all duration-500 h-full"
+                  class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/20 hover:bg-white/15 transition-all duration-500 h-full"
+                  :class="education.hoverBorderClass"
                 >
                   <div class="flex items-center mb-4">
                     <div
-                      class="w-12 h-12 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-full flex items-center justify-center mr-4"
+                      class="w-12 h-12 rounded-full flex items-center justify-center mr-4 bg-white"
                     >
-                      <Icon
-                        name="ph:graduation-cap-bold"
-                        class="text-2xl text-white"
+                      <img
+                        :src="education.image"
+                        alt=""
+                        class="w-24 h-24 object-contain drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]"
                       />
                     </div>
                     <div>
                       <h3 class="text-xl font-bold text-white">
-                        Secondary School
+                        {{ education.title }}
                       </h3>
-                      <p class="text-emerald-300 text-sm">2016 - 2019</p>
+                      <p class="text-sm" :class="education.dateColorClass">
+                        {{ education.period }}
+                      </p>
                     </div>
                   </div>
 
@@ -1008,129 +1101,33 @@ onBeforeUnmount(() => {
                     <div class="flex items-center space-x-2 text-gray-300">
                       <Icon
                         name="ph:building-bold"
-                        class="text-sm text-emerald-400"
+                        class="text-sm"
+                        :class="education.buildingIconClass"
                       />
-                      <span class="text-sm"
-                        >Farafenni Senior Secondary School</span
-                      >
+                      <span class="text-sm">{{ education.institution }}</span>
                     </div>
-                  </div>
-
-                  <p class="text-gray-300 text-sm leading-relaxed">
-                    Completed secondary education with focus on science and
-                    mathematics. Developed foundational problem-solving and
-                    analytical skills.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Bachelor's Degree -->
-              <div class="group">
-                <div
-                  class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/20 hover:bg-white/15 hover:border-emerald-400/50 transition-all duration-500 h-full"
-                >
-                  <div class="flex items-center mb-4">
                     <div
-                      class="w-12 h-12 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-full flex items-center justify-center mr-4"
+                      v-if="education.degree"
+                      class="text-sm font-medium"
+                      :class="education.degreeColorClass"
                     >
-                      <Icon
-                        name="ph:student-bold"
-                        class="text-2xl text-white"
-                      />
-                    </div>
-                    <div>
-                      <h3 class="text-xl font-bold text-white">
-                        Bachelor's Degree
-                      </h3>
-                      <p class="text-emerald-300 text-sm">2019 - 2024</p>
-                    </div>
-                  </div>
-
-                  <div class="space-y-3 mb-4">
-                    <div class="flex items-center space-x-2 text-gray-300">
-                      <Icon
-                        name="ph:building-bold"
-                        class="text-sm text-emerald-400"
-                      />
-                      <span class="text-sm">University of The Gambia</span>
-                    </div>
-                    <div class="text-cyan-300 text-sm font-medium">
-                      BSc Computer Science
+                      {{ education.degree }}
                     </div>
                   </div>
 
                   <p class="text-gray-300 text-sm leading-relaxed mb-4">
-                    Comprehensive program covering core CS principles, software
-                    development, and advanced programming techniques.
+                    {{ education.description }}
                   </p>
 
-                  <div class="flex flex-wrap gap-2">
+                  <div v-if="education.tags" class="flex flex-wrap gap-2">
                     <span
-                      class="px-3 py-1 bg-emerald-500/20 text-emerald-300 rounded-full text-xs"
-                      >Programming</span
+                      v-for="tag in education.tags"
+                      :key="tag"
+                      class="px-3 py-1 rounded-full text-xs"
+                      :class="education.tagClass"
                     >
-                    <span
-                      class="px-3 py-1 bg-emerald-500/20 text-emerald-300 rounded-full text-xs"
-                      >Data Structures</span
-                    >
-                    <span
-                      class="px-3 py-1 bg-emerald-500/20 text-emerald-300 rounded-full text-xs"
-                      >Algorithms</span
-                    >
-                  </div>
-                </div>
-              </div>
-
-              <!-- Exchange Program -->
-              <div class="group">
-                <div
-                  class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/20 hover:bg-white/15 hover:border-cyan-400/50 transition-all duration-500 h-full"
-                >
-                  <div class="flex items-center mb-4">
-                    <div
-                      class="w-12 h-12 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full flex items-center justify-center mr-4"
-                    >
-                      <Icon
-                        name="ph:airplane-bold"
-                        class="text-2xl text-white"
-                      />
-                    </div>
-                    <div>
-                      <h3 class="text-xl font-bold text-white">
-                        Exchange Program
-                      </h3>
-                      <p class="text-cyan-300 text-sm">2023 - 2024</p>
-                    </div>
-                  </div>
-
-                  <div class="space-y-3 mb-4">
-                    <div class="flex items-center space-x-2 text-gray-300">
-                      <Icon
-                        name="ph:building-bold"
-                        class="text-sm text-cyan-400"
-                      />
-                      <span class="text-sm">Universidad de Jaén, Spain</span>
-                    </div>
-                    <div class="text-cyan-300 text-sm font-medium">
-                      Erasmus Student Exchange
-                    </div>
-                  </div>
-
-                  <p class="text-gray-300 text-sm leading-relaxed mb-4">
-                    International exchange program enhancing cultural
-                    understanding and technical skills through diverse
-                    educational environments.
-                  </p>
-
-                  <div class="flex flex-wrap gap-2">
-                    <span
-                      class="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-xs"
-                      >Cultural Exchange</span
-                    >
-                    <span
-                      class="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-xs"
-                      >Spanish Language</span
-                    >
+                      {{ tag }}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -1145,95 +1142,70 @@ onBeforeUnmount(() => {
             <div
               class="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-4xl mx-auto"
             >
-              <!-- Web Development Course -->
-              <div class="group">
+              <div
+                v-for="certification in certificationsData"
+                :key="certification.id"
+                class="group"
+              >
                 <div
-                  class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/20 hover:bg-white/15 hover:border-purple-400/50 transition-all duration-500 h-full"
+                  class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/20 hover:bg-white/15 transition-all duration-500 h-full"
+                  :class="certification.hoverBorderClass"
                 >
                   <div class="flex items-center mb-4">
                     <div
-                      class="w-12 h-12 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full flex items-center justify-center mr-4"
+                      class="w-12 h-12 rounded-full flex items-center justify-center mr-4 overflow-hidden bg-white"
+                      
                     >
-                      <Icon name="ph:code-bold" class="text-2xl text-white" />
+                     
+
+                      <img
+                        :src="certification.image"
+                         :alt="certification.title"
+                        class="w-24 h-24 object-contain drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]"
+                      />
                     </div>
                     <div>
                       <h3 class="text-xl font-bold text-white">
-                        Web Development
+                        {{ certification.title }}
                       </h3>
-                      <p class="text-purple-300 text-sm">Free Code Camp</p>
+                      <p class="text-sm" :class="certification.dateColorClass">
+                        {{ certification.period }}
+                      </p>
                     </div>
                   </div>
 
                   <div class="space-y-3 mb-4">
                     <div class="flex items-center space-x-2 text-gray-300">
                       <Icon
-                        name="ph:computer-tower-bold"
-                        class="text-sm text-purple-400"
+                        :name="certification.locationIcon"
+                        class="text-sm"
+                        :class="certification.locationIconClass"
                       />
-                      <span class="text-sm">Self-Taught</span>
+                      <span class="text-sm">{{ certification.location }}</span>
+                    </div>
+                    <div
+                      v-if="certification.achievement"
+                      class="text-sm font-medium"
+                      :class="certification.achievementColorClass"
+                    >
+                      {{ certification.achievement }}
                     </div>
                   </div>
 
                   <p class="text-gray-300 text-sm leading-relaxed mb-4">
-                    Comprehensive course covering HTML, CSS, JavaScript, and
-                    modern web development practices for responsive
-                    applications.
+                    {{ certification.description }}
                   </p>
 
-                  <div class="flex flex-wrap gap-2">
+                  <div v-if="certification.tags" class="flex flex-wrap gap-2">
                     <span
-                      class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs"
-                      >HTML</span
+                      v-for="tag in certification.tags"
+                      :key="tag"
+                      class="px-3 py-1 rounded-full text-xs"
+                      :class="certification.tagClass"
                     >
-                    <span
-                      class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs"
-                      >CSS</span
-                    >
-                    <span
-                      class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs"
-                      >JavaScript</span
-                    >
+                      {{ tag }}
+                    </span>
                   </div>
-                </div>
-              </div>
-
-              <!-- UNESCO Hackathon -->
-              <div class="group">
-                <div
-                  class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/20 hover:bg-white/15 hover:border-orange-400/50 transition-all duration-500 h-full"
-                >
-                  <div class="flex items-center mb-4">
-                    <div
-                      class="w-12 h-12 bg-gradient-to-r from-orange-400 to-red-400 rounded-full flex items-center justify-center mr-4"
-                    >
-                      <Icon name="ph:trophy-bold" class="text-2xl text-white" />
-                    </div>
-                    <div>
-                      <h3 class="text-xl font-bold text-white">
-                        UNESCO Hackathon
-                      </h3>
-                      <p class="text-orange-300 text-sm">November 2022</p>
-                    </div>
-                  </div>
-
-                  <div class="space-y-3 mb-4">
-                    <div class="flex items-center space-x-2 text-gray-300">
-                      <Icon
-                        name="ph:map-pin-bold"
-                        class="text-sm text-orange-400"
-                      />
-                      <span class="text-sm">India</span>
-                    </div>
-                    <div class="text-orange-300 text-sm font-medium">
-                      Finalist - UNESCO India Africa Hackathon
-                    </div>
-                  </div>
-
-                  <p class="text-gray-300 text-sm leading-relaxed">
-                    36-hour intensive competition designing innovative solutions
-                    to real-world challenges faced by communities in India and
-                    Africa.
-                  </p>
                 </div>
               </div>
             </div>
@@ -1347,12 +1319,12 @@ onBeforeUnmount(() => {
                   <div class="flex flex-col lg:flex-row lg:items-start gap-6">
                     <div class="flex-shrink-0">
                       <div
-                        class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-500"
+                        class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mr-4 overflow-hidden bg-white group-hover:rotate-12 transition-transform duration-500"
                       >
                         <img
                           src="/nafa.png"
                           alt="Company Logo"
-                          class="w-16 h-16 object-contain"
+                          class="w-24 h-24 object-contain drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]"
                         />
                       </div>
                     </div>
@@ -1430,12 +1402,12 @@ onBeforeUnmount(() => {
                   <div class="flex flex-col lg:flex-row lg:items-start gap-6">
                     <div class="flex-shrink-0">
                       <div
-                        class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-500"
+                        class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mr-4 overflow-hidden bg-white group-hover:rotate-12 transition-transform duration-500"
                       >
                         <img
                           src="/writemedia.png"
                           alt="Company Logo"
-                          class="w-16 h-18 object-contain"
+                          class=" object-contain"
                         />
                       </div>
                     </div>
@@ -1470,8 +1442,8 @@ onBeforeUnmount(() => {
                         >
                         <span
                           class="px-4 py-2 bg-cyan-500/20 text-cyan-300 rounded-full text-sm font-medium"
-                          >Primevue </span
-                        >
+                          >Primevue
+                        </span>
                         <span
                           class="px-4 py-2 bg-cyan-500/20 text-cyan-300 rounded-full text-sm font-medium"
                           >Vue js</span
@@ -2573,19 +2545,19 @@ onBeforeUnmount(() => {
               <a
                 href="#"
                 class="hover:text-purple-400 transition-colors duration-300"
-                >Privacy Policy</a
+                >Kololi, The Gambia</a
               >
               <span>•</span>
               <a
                 href="#"
                 class="hover:text-purple-400 transition-colors duration-300"
-                >Terms of Service</a
+                >+220 3076463</a
               >
               <span>•</span>
               <a
                 href="#"
                 class="hover:text-purple-400 transition-colors duration-300"
-                >Contact</a
+                >hydarasheikhtijan@gmail.com</a
               >
             </div>
           </div>
