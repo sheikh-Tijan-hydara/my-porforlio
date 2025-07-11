@@ -1335,7 +1335,7 @@ onBeforeUnmount(() => {
                         <h3
                           class="text-2xl lg:text-3xl font-bold text-white group-hover:text-emerald-400 transition-colors duration-300"
                         >
-                          Frontend Developer
+                          Front End Developer
                         </h3>
                         <span
                           class="text-emerald-400 font-semibold text-lg mt-2 lg:mt-0"
@@ -1418,7 +1418,7 @@ onBeforeUnmount(() => {
                         <h3
                           class="text-2xl lg:text-3xl font-bold text-white group-hover:text-cyan-400 transition-colors duration-300"
                         >
-                          Front end Developer
+                          Front End Developer
                         </h3>
                         <span
                           class="text-cyan-400 font-semibold text-lg mt-2 lg:mt-0"
@@ -1530,7 +1530,7 @@ onBeforeUnmount(() => {
                         <h3
                           class="text-2xl lg:text-3xl font-bold text-white group-hover:text-purple-400 transition-colors duration-300"
                         >
-                          Front end Developer Intern
+                          Front End Developer Intern
                         </h3>
                         <span
                           class="text-purple-400 font-semibold text-lg mt-2 lg:mt-0"
